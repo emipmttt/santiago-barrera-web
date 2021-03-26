@@ -8,10 +8,46 @@
 }
 
 @font-face {
+  font-family: 'Hatton-Light';
+  src: url("/assets/Fonts/Hatton/Hatton-Light.ttf");
+}
+
+.Hatton-Light{
+  font-family: 'Hatton-Light', serif;
+}
+
+@font-face {
+  font-family: 'Hatton-Bold';
+  src: url("/assets/Fonts/Hatton/Hatton-Bold.ttf");
+}
+
+.Hatton-Bold{
+  font-family: 'Hatton-Bold', serif;
+}
+
+@font-face {
   font-family: 'Nue Montreal';
   src: url("/assets/Fonts/Neue_Montreal/NeueMontreal-Regular.ttf");
 }
 
 .NueMontreal{
   font-family: 'Nue Montreal', serif;
-}s
+}
+
+@font-face {
+  font-family: 'NeueMontreal-Bold';
+  src: url("/assets/Fonts/Neue_Montreal/NeueMontreal-Bold.ttf");
+}
+
+.NeueMontreal-Bold{
+  font-family: 'NeueMontreal-Bold', serif;
+}
+
+@font-face {
+  font-family: 'NeueMontreal-Light';
+  src: url("/assets/Fonts/Neue_Montreal/NeueMontreal-Light.ttf");
+}
+
+.NeueMontreal-Light{
+  font-family: 'NeueMontreal-Light', serif;
+}
