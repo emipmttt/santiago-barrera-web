@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Hatton';
-  src: url("/assets/Fonts/Hatton/Hatton-Medium.ttf");
+  src: url("assets/Fonts/Hatton/Hatton-Medium.ttf");
 }
 
 .Hatton{
@@ -9,25 +9,25 @@
 
 @font-face {
   font-family: 'Hatton-Light';
-  src: url("/assets/Fonts/Hatton/Hatton-Light.ttf");
+  src: url("assets/Fonts/Hatton/Hatton-Light.ttf");
 }
 
 .Hatton-Light{
-  font-family: 'Hatton-Light', serif;
+  font-family: 'Hatton-Light';
 }
 
 @font-face {
   font-family: 'Hatton-Bold';
-  src: url("/assets/Fonts/Hatton/Hatton-Bold.ttf");
+  src: url("assets/Fonts/Hatton/Hatton-Bold.ttf");
 }
 
 .Hatton-Bold{
-  font-family: 'Hatton-Bold', serif;
+  font-family: 'Hatton-Bold';
 }
 
 @font-face {
   font-family: 'Nue Montreal';
-  src: url("/assets/Fonts/Neue_Montreal/NeueMontreal-Regular.ttf");
+  src: url("assets/Fonts/Neue_Montreal/NeueMontreal-Regular.ttf");
 }
 
 .NueMontreal{
@@ -36,18 +36,18 @@
 
 @font-face {
   font-family: 'NeueMontreal-Bold';
-  src: url("/assets/Fonts/Neue_Montreal/NeueMontreal-Bold.ttf");
+  src: url("assets/Fonts/Neue_Montreal/NeueMontreal-Bold.ttf");
 }
 
 .NeueMontreal-Bold{
-  font-family: 'NeueMontreal-Bold', serif;
+  font-family: 'NeueMontreal-Bold';
 }
 
 @font-face {
   font-family: 'NeueMontreal-Light';
-  src: url("/assets/Fonts/Neue_Montreal/NeueMontreal-Light.ttf");
+  src: url("assets/Fonts/Neue_Montreal/NeueMontreal-Light.ttf");
 }
 
 .NeueMontreal-Light{
-  font-family: 'NeueMontreal-Light', serif;
+  font-family: 'NeueMontreal-Light';
 }
