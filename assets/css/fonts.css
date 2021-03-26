@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'Hatton';
+  src: url("/assets/Fonts/Hatton/Hatton-Medium.ttf");
+}
+
+.Hatton{
+  font-family: 'Hatton', serif;
+}
+
+@font-face {
+  font-family: 'Nue Montreal';
+  src: url("/assets/Fonts/Neue_Montreal/NeueMontreal-Regular.ttf");
+}
+
+.NueMontreal{
+  font-family: 'Nue Montreal', serif;
+}s
