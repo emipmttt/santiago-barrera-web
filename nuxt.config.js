@@ -20,6 +20,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    "@/assets/css/fonts.css"
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -32,7 +33,20 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify',
+    ['@nuxtjs/vuetify', {
+
+      theme: {
+        dark: false,
+
+        options: {
+          customProperties: true
+        },
+
+        light: {
+          background: '#d0f0c0'
+        }
+      }
+    }]
   ],
 
   serverMiddleware: [

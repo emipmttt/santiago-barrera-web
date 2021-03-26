@@ -1,90 +1,38 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <div class="text-center">
-        <logo />
-        <vuetify-logo />
+  <v-row class="mt-8">
+    <v-col class="col-md-12 img-bg py-6">
+      <h1 class="Hatton-Light light">
+        I’M SANTIAGO BARRERA, <br>
+        A COLUMBIAN GRAPHIC <br>
+        DESIGNER WITH A FOCUS <br>
+        ON EDITORIAL DESIGN <br>
+        & BRANDING.
+      </h1>
+
+      <h3 class="mt-4 NueMontreal" style="font-weight: 100">
+        DESIGN & ART LOVER. I ALSO LOVE <span class="super-text NeueMontreal-Bold">{{ words[index] }}</span>
+      </h3>
+    </v-col>
+
+    <v-col class="col-12 d-flex justify-end mt-4">
+      <div>
+        <p class="connect-item NeueMontreal-Bold super-text mb-4">CONNECT:</p>
+        <p class="connect-item NueMontreal">BEHANCE</p>
+        <p class="connect-item NueMontreal">INSTAGRAM</p>
+        <p class="connect-item NueMontreal">LINKEDIN</p>
       </div>
-      <v-card>
-        <v-card-title class="headline NueMontreal">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
-            >
-              discord
-            </a>.
-          </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
-          >
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
     </v-col>
   </v-row>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
 
 export default {
-  components: {
-    Logo,
-    VuetifyLogo
-  },
+
+  data: () => ({
+    index: 0,
+    words: ["CREATE", "CREATE", "AWESOME", "LOVE", "ROSE"]
+  }),
 
   async mounted() {
     // USANDO SERVER
@@ -93,6 +41,42 @@ export default {
     });
     const response = await request.json();
     console.log(response);
+
+    this.randomIndex();
+  },
+
+  methods: {
+    randomIndex() {
+      this.index = Math.floor((Math.random() * (this.words.length - 1 + 1)) + 1);
+      console.log(this.index)
+    }
   }
 }
 </script>
+
+<style>
+  .light {
+    font-size: 56px;
+    font-weight: 100;
+    letter-spacing: 5px;
+    line-height: normal;
+  }
+
+  .super-text {
+    color: #ef712f;
+  }
+
+  .img-bg {
+    background: url("~assets/images/bg-orange.png") no-repeat;
+    background-size: 620px;
+    background-origin: content-box;
+    background-position-x: right;
+    background-position-y: center;
+  }
+
+  .connect-item {
+    font-size: 14px;
+    margin: 4px !important;
+    line-height: normal;
+  }
+</style>
