@@ -62,6 +62,7 @@ export default {
     line-height: normal;
   }
 
+
   .super-text {
     color: #ef712f;
   }
