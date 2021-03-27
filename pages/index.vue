@@ -28,6 +28,10 @@
       </v-row>
     </v-container>
 
+    <p class="Hatton title_careful" style="font-weight: 100">
+      A CARFUL SELECTION OF MY WORK
+    </p>
+
     <p class="super-santiago-text Hatton-Light mt-10">
       SANTIAGO
       BARRERA
@@ -66,11 +70,14 @@
 
 <script>
 
-export default {
+import Preloader from "../components/preloader";
 
+export default {
+  components: {Preloader},
   data: () => ({
     index: 0,
-    words: ["CREATE", "CREATE", "AWESOME", "LOVE", "ROSE"]
+    words: ["CREATE", "CREATE", "AWESOME", "LOVE", "ROSE"],
+    isVisible: true
   }),
 
   async mounted() {
@@ -82,12 +89,18 @@ export default {
     console.log(response);
 
     this.randomIndex();
+
+    setTimeout(this.visible, 500000000)
+
   },
 
   methods: {
     randomIndex() {
       this.index = Math.floor((Math.random() * (this.words.length - 1 + 1)) + 1);
       console.log(this.index)
+    },
+    visible (){
+      this.isVisible = !this.isVisible
     }
   }
 }
@@ -125,5 +138,10 @@ export default {
     font-size: 14px;
     margin: 4px !important;
     line-height: normal;
+  }
+
+  .title_careful{
+    text-align: center;
+    margin-top: 14vh;
   }
 </style>

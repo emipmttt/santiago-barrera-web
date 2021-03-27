@@ -5,6 +5,8 @@
     app
   >
 
+    <preloader v-bind="isVisible" v-if="isVisible"/>
+
     <v-spacer />
     <v-toolbar-items>
       <v-btn text>
@@ -44,8 +46,24 @@
 </template>
 
 <script>
+import Preloader from "./preloader";
 export default {
-  name: "Header"
+  name: "Header",
+  components: {Preloader},
+
+  data: () => ({
+    isVisible: true
+  }),
+
+  async mounted() {
+    setTimeout(this.visible, 8000)
+  },
+
+  methods: {
+    visible (){
+      this.isVisible = !this.isVisible
+    }
+  }
 }
 </script>
 
