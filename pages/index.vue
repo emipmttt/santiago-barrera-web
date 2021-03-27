@@ -1,28 +1,67 @@
 <template>
-  <v-row class="mt-8">
-    <v-col class="col-md-12 img-bg py-6">
-      <h1 class="Hatton-Light light">
-        I’M SANTIAGO BARRERA, <br>
-        A COLUMBIAN GRAPHIC <br>
-        DESIGNER WITH A FOCUS <br>
-        ON EDITORIAL DESIGN <br>
-        & BRANDING.
-      </h1>
+  <div id="index">
+    <v-container>
 
-      <h3 class="mt-4 NueMontreal" style="font-weight: 100">
-        DESIGN & ART LOVER. I ALSO LOVE <span class="super-text NeueMontreal-Bold">{{ words[index] }}</span>
-      </h3>
-    </v-col>
+      <v-row class="mt-8">
+        <v-col class="col-md-12 img-bg py-6">
+          <h1 class="Hatton-Light light">
+            I’M SANTIAGO BARRERA, <br>
+            A COLUMBIAN GRAPHIC <br>
+            DESIGNER WITH A FOCUS <br>
+            ON EDITORIAL DESIGN <br>
+            & BRANDING.
+          </h1>
 
-    <v-col class="col-12 d-flex justify-end mt-4">
-      <div>
-        <p class="connect-item NeueMontreal-Bold super-text mb-4">CONNECT:</p>
-        <p class="connect-item NueMontreal">BEHANCE</p>
-        <p class="connect-item NueMontreal">INSTAGRAM</p>
-        <p class="connect-item NueMontreal">LINKEDIN</p>
-      </div>
-    </v-col>
-  </v-row>
+          <h3 class="mt-4 NueMontreal" style="font-weight: 100">
+            DESIGN & ART LOVER. I ALSO LOVE <span class="super-text NeueMontreal-Bold">{{ words[index] }}</span>
+          </h3>
+        </v-col>
+
+        <v-col class="col-12 d-flex justify-end mt-4">
+          <div>
+            <p class="connect-item NeueMontreal-Bold super-text mb-4">CONNECT:</p>
+            <p class="connect-item NueMontreal">BEHANCE</p>
+            <p class="connect-item NueMontreal">INSTAGRAM</p>
+            <p class="connect-item NueMontreal">LINKEDIN</p>
+          </div>
+        </v-col>
+      </v-row>
+    </v-container>
+
+    <p class="super-santiago-text Hatton-Light mt-10">
+      SANTIAGO
+      BARRERA
+    </p>
+
+    <v-container>
+      <v-row justify="center">
+        <v-col cols="8" style="position: relative; top: -180px">
+          <img src="~assets/images/santiago.jpg" style="width: 100%"/>
+        </v-col>
+
+        <v-col cols="8">
+          <v-row>
+            <v-col cols="4">
+              <h4 class="NeueMontreal-Bold" style="text-align: center">ABOUT ME</h4>
+            </v-col>
+
+            <v-col cols="8">
+              <p class="NueMontreal">
+                Santiago is a student passionate about design and art. Currently in his third
+                year of Graphic Design at School of Design in George Brown College.
+                According to him, the most exciting and important part is to always learn
+                new skills that can be meticulously executed in designs, the use of colour
+                and contrast are his favourite subjects. Santiago is originally from
+                Colombia and speaks three languages, Spanish, Portuguese and English.
+                He lived in more than four countries (Colombia, Ecuador, Brazil and
+                Canada), a lover of culture, design&art and knowledge.
+              </p>
+            </v-col>
+          </v-row>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
 </template>
 
 <script>
@@ -65,6 +104,13 @@ export default {
 
   .super-text {
     color: #ef712f;
+  }
+
+  .super-santiago-text {
+    font-size: 250px;
+    text-align: center;
+    line-height: 250px;
+    letter-spacing: 10px;
   }
 
   .img-bg {

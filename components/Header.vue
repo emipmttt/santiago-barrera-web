@@ -1,7 +1,7 @@
 <template>
   <v-app-bar
     color="#edf2f4"
-    elevation="0"
+    elevate-on-scroll="2"
     app
   >
 
