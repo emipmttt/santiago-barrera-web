@@ -32,6 +32,11 @@
       A CARFUL SELECTION OF MY WORK
     </p>
 
+    <card/>
+    <br/><br/>
+    <v-divider class="divider"/>
+    <card/>
+
     <p class="super-santiago-text Hatton-Light mt-10">
       SANTIAGO
       BARRERA
@@ -71,9 +76,10 @@
 <script>
 
 import Preloader from "../components/preloader";
+import Card from "../components/card";
 
 export default {
-  components: {Preloader},
+  components: {Card, Preloader},
   data: () => ({
     index: 0,
     words: ["CREATE", "CREATE", "AWESOME", "LOVE", "ROSE"],
@@ -144,4 +150,11 @@ export default {
     text-align: center;
     margin-top: 14vh;
   }
+
+  .divider{
+    width: 90%;
+    display: flex;
+    margin-left: 5%;
+  }
+
 </style>
