@@ -5,7 +5,7 @@
     app
   >
 
-    <preloader v-bind="isVisible" v-if="false"/>
+    <preloader v-bind="isVisible" v-if="isVisible"/>
 
     <v-spacer />
     <v-toolbar-items>
