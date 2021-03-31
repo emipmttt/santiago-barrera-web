@@ -1,7 +1,7 @@
 <template>
   <v-app-bar
     color="#edf2f4"
-    elevate-on-scroll="2"
+    elevate-on-scroll
     app
   >
 
@@ -38,7 +38,7 @@
 
     <v-spacer />
 
-    <v-btn text style="font-size: 12px; text-align: center; margin-right: 64px">
+    <v-btn text class="button_app_style">
       SANTIAGO <br>
       BARRERA
     </v-btn>
@@ -68,5 +68,9 @@ export default {
 </script>
 
 <style scoped>
-
+.button_app_style {
+  font-size: 12px;
+  text-align: center;
+  margin-right: 64px
+}
 </style>

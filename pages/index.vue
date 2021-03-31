@@ -11,9 +11,11 @@
             & BRANDING.
           </h1>
 
-          <h3 class="mt-4 NueMontreal" style="font-weight: 100">
+          <h3 class="mt-4 NueMontreal subheader--font-weight">
             DESIGN & ART LOVER. I ALSO LOVE
-            <span class="super-text NeueMontreal-Bold">{{ words[index] }}</span>
+            <span class="super-text NeueMontreal-Bold">
+              {{ words[index] }}
+            </span>
           </h3>
         </v-col>
 
@@ -22,15 +24,22 @@
             <p class="connect-item NeueMontreal-Bold super-text mb-4">
               CONNECT:
             </p>
-            <p class="connect-item NueMontreal">BEHANCE</p>
-            <p class="connect-item NueMontreal">INSTAGRAM</p>
-            <p class="connect-item NueMontreal">LINKEDIN</p>
+            <p class="connect-item NueMontreal">
+              BEHANCE
+            </p>
+            <p class="connect-item NueMontreal">
+              INSTAGRAM
+            </p>
+            <p class="connect-item NueMontreal">
+              LINKEDIN
+            </p>
           </div>
         </v-col>
+
       </v-row>
     </v-container>
 
-    <p class="Hatton title_careful" style="font-weight: 100">
+    <p class="Hatton title_careful subheader--font-weight">
       A CARFUL SELECTION OF MY WORK
     </p>
 
@@ -39,18 +48,20 @@
     <v-divider class="divider" />
     <PortfolioItem />
 
-    <p class="super-santiago-text Hatton-Light mt-10">SANTIAGO BARRERA</p>
+    <p class="super-santiago-text Hatton-Light mt-10">
+      SANTIAGO BARRERA
+    </p>
 
     <v-container>
       <v-row justify="center">
         <v-col cols="8" style="position: relative; top: -180px">
-          <img src="~assets/images/santiago.jpg" style="width: 100%" />
+          <img src="~assets/images/santiago.jpg" class="img--full-width" />
         </v-col>
 
         <v-col cols="8">
           <v-row>
             <v-col cols="4">
-              <h4 class="NeueMontreal-Bold" style="text-align: center">
+              <h4 class="NeueMontreal-Bold text--center">
                 ABOUT ME
               </h4>
             </v-col>
@@ -69,6 +80,12 @@
               </p>
             </v-col>
           </v-row>
+
+          <v-col class="col-md-12 d-flex justify-center mt-10">
+            <ButtonApp>
+              Read more
+            </ButtonApp>
+          </v-col>
         </v-col>
       </v-row>
     </v-container>
@@ -82,7 +99,11 @@ import PortfolioItem from "../components/PortfolioItem";
 import Footer from "../components/Footer";
 
 export default {
-  components: { PortfolioItem, Preloader },
+  components: {
+    PortfolioItem,
+    Preloader,
+    Footer
+  },
   data: () => ({
     index: 0,
     words: ["CREATE", "CREATE", "AWESOME", "LOVE", "ROSE"],
@@ -156,5 +177,17 @@ export default {
   width: 90%;
   display: flex;
   margin-left: 5%;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.img--full-width {
+  width: 100%;
+}
+
+.subheader--font-weight {
+  font-weight: 100
 }
 </style>
