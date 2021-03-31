@@ -1,8 +1,9 @@
 <template>
   <v-app-bar
     color="#edf2f4"
-    elevate-on-scroll
     app
+    elevate-on-scroll
+    v-if="false"
   >
 
     <preloader v-bind="isVisible" v-if="isVisible"/>
