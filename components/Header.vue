@@ -68,6 +68,7 @@ export default {
 </script>
 
 <style scoped>
+
 .button_app_style {
   font-size: 12px;
   text-align: center;
