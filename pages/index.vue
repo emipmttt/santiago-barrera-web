@@ -32,10 +32,10 @@
       A CARFUL SELECTION OF MY WORK
     </p>
 
-    <card/>
+    <PortfolioItem/>
     <br/><br/>
     <v-divider class="divider"/>
-    <card/>
+    <PortfolioItem/>
 
     <p class="super-santiago-text Hatton-Light mt-10">
       SANTIAGO
@@ -75,11 +75,11 @@
 
 <script>
 
+import PortfolioItem from "../components/PortfolioItem";
 import Preloader from "../components/preloader";
-import Card from "../components/card";
 
 export default {
-  components: {Card, Preloader},
+  components: {Preloader, PortfolioItem},
   data: () => ({
     index: 0,
     words: ["CREATE", "CREATE", "AWESOME", "LOVE", "ROSE"],

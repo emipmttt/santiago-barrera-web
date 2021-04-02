@@ -3,7 +3,7 @@
     color="#edf2f4"
     app
     elevate-on-scroll
-    v-if="false"
+    v-if="true"
   >
 
     <preloader v-bind="isVisible" v-if="isVisible"/>

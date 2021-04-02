@@ -1,12 +1,12 @@
 <template>
 
-  <div class="container" id="background">
-    <div class="animated">
-      <p class="text Hatton" id="animatedText">
+  <div class="preloader" id="preloader_backgroundAnimation">
+    <div class="preloader__container">
+      <p class="preloader__container__text Hatton" id="preloader__container--animatedText">
         Satiago<br/>Barrera
       </p>
     </div>
-    <div id="animatedCircle"/>
+    <div id="preloader__animatedCircle"/>
   </div>
 
 </template>
@@ -19,7 +19,7 @@ export default {
 
 <style scoped>
 
-.container{
+.preloader{
   z-index: 100;
   position: absolute;
   display: flex;
@@ -30,8 +30,17 @@ export default {
   background: #EDF2F4;
 }
 
+#preloader_backgroundAnimation{
+  animation-name: backgroundAnimation;
+  animation-duration: 9s;
+}
 
-#animatedText{
+@keyframes backgroundAnimation {
+  90%{background-color: #edf2f4}
+  100%{background-color: rgba(237,242,244,0)}
+}
+
+#preloader__container--animatedText{
   position: relative;
   display: flex;
   animation-name: animatedTex;
@@ -47,16 +56,16 @@ export default {
   100%{color: rgba(237,242,244,0)}
 }
 
-.animated{
+.preloader__container{
   margin: auto;
 }
 
-.text{
+.preloader__container__text{
   left: 70%;
   font-size: 4rem;
 }
 
-#animatedCircle{
+#preloader__animatedCircle{
   height: 100px;
   width: 100px;
   margin: 40vh -100px 0 auto;
@@ -75,16 +84,6 @@ export default {
   35%{transform: scale(2); right: 100px; top: 0px;}
   60%{transform: scale(2); right: 120%; top: 0px;}
   100%{transform: scale(2); right: 120%; top: 0px;}
-}
-
-#background{
-  animation-name: fund;
-  animation-duration: 9s;
-}
-
-@keyframes fund {
-  90%{background-color: #edf2f4}
-  100%{background-color: rgba(237,242,244,0)}
 }
 
 </style>
