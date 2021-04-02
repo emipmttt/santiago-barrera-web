@@ -3,6 +3,7 @@
     <v-btn
       depressed
       rounded
+      block
       class="button__base"
     >
       <slot></slot>

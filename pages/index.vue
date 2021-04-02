@@ -36,17 +36,10 @@
     <v-divider class="divider"/>
     <PortfolioItem/>
 
-    <p class="super-santiago-text Hatton-Light mt-10">
-      SANTIAGO
-      BARRERA
-    </p>
+    <img src="~assets/images/banner.png" style="width: 100%" class="my-10"/>
 
     <v-container>
       <v-row justify="center">
-        <v-col cols="8" style="position: relative; top: -180px">
-          <img src="~assets/images/santiago.jpg" style="width: 100%"/>
-        </v-col>
-
         <v-col class="col-12 col-md-8">
           <v-row class="d-flex flex-column flex-md-row">
             <v-col class="col-12 col-md-4 text-md-center">
@@ -54,7 +47,7 @@
             </v-col>
 
             <v-col class="col-12 col-md-8">
-              <p class="NueMontreal">
+              <p class="NueMontreal mb-6">
                 Santiago is a student passionate about design and art. Currently in his third
                 year of Graphic Design at School of Design in George Brown College.
                 According to him, the most exciting and important part is to always learn
@@ -64,6 +57,10 @@
                 He lived in more than four countries (Colombia, Ecuador, Brazil and
                 Canada), a lover of culture, design&art and knowledge.
               </p>
+
+              <ButtonApp>
+                READ MORE
+              </ButtonApp>
             </v-col>
           </v-row>
         </v-col>
