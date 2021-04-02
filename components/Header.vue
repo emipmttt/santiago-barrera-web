@@ -3,13 +3,14 @@
     color="#edf2f4"
     app
     elevate-on-scroll
-    v-if="true"
   >
+
+    <v-app-bar-nav-icon class="d-xs-flex d-md-none"/>
 
     <preloader v-bind="isVisible" v-if="isVisible"/>
 
-    <v-spacer />
-    <v-toolbar-items>
+    <v-spacer class="d-none d-md-flex" />
+    <v-toolbar-items class="d-none d-md-flex">
       <v-btn text>
         WORK
       </v-btn>
@@ -33,11 +34,11 @@
 
     <v-spacer />
 
-    <v-btn text>
+    <v-btn text class="d-none d-md-flex">
       AVAILABLE WORK
     </v-btn>
 
-    <v-spacer />
+    <v-spacer class="d-none d-md-flex"/>
 
     <v-btn text class="button_app_style">
       SANTIAGO <br>
@@ -74,5 +75,11 @@ export default {
   font-size: 12px;
   text-align: center;
   margin-right: 64px
+}
+
+@media screen and (max-width: 425px) {
+  .button_app_style {
+    margin: 0;
+  }
 }
 </style>

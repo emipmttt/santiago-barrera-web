@@ -1,8 +1,7 @@
 <template>
   <div id="index">
     <v-container>
-
-      <v-row class="mt-8">
+      <v-row class="mt-0 mt-md-8">
         <v-col class="col-md-12 img-bg py-6">
           <h1 class="Hatton-Light light">
             I’M SANTIAGO BARRERA, <br>
@@ -17,7 +16,7 @@
           </h3>
         </v-col>
 
-        <v-col class="col-12 d-flex justify-end mt-4">
+        <v-col class="col-12 d-flex justify-md-end mt-4">
           <div>
             <p class="connect-item NeueMontreal-Bold super-text mb-4">CONNECT:</p>
             <p class="connect-item NueMontreal">BEHANCE</p>
@@ -48,13 +47,13 @@
           <img src="~assets/images/santiago.jpg" style="width: 100%"/>
         </v-col>
 
-        <v-col cols="8">
-          <v-row>
-            <v-col cols="4">
-              <h4 class="NeueMontreal-Bold" style="text-align: center">ABOUT ME</h4>
+        <v-col class="col-12 col-md-8">
+          <v-row class="d-flex flex-column flex-md-row">
+            <v-col class="col-12 col-md-4 text-md-center">
+              <h4 class="NeueMontreal-Bold">ABOUT ME</h4>
             </v-col>
 
-            <v-col cols="8">
+            <v-col class="col-12 col-md-8">
               <p class="NueMontreal">
                 Santiago is a student passionate about design and art. Currently in his third
                 year of Graphic Design at School of Design in George Brown College.
@@ -157,4 +156,14 @@ export default {
     margin-left: 5%;
   }
 
+  @media screen and (max-width: 425px) {
+    .light {
+      font-size: 2em;
+    }
+
+    .img-bg {
+      background-size: 420px;
+      background-position-x: initial;
+    }
+  }
 </style>
