@@ -1,6 +1,5 @@
 <template>
   <div class="mt-15 PortfolioItem">
-    <div class="PortfolioItem__container">
       <div class="PortfolioItem__container--data">
         <p class="NueMontreal PortfolioItem__container--data--num">01</p>
         <div>
@@ -15,22 +14,29 @@
               @click=""
             > mdi-plus-circle-outline </v-icon>
           </p>
+        </div>
+    </div>
 
+    <div class="PortfolioItem__container">
+      <div class="PortfolioItem__container--data--about">
+        <div>
+          <p class="NeueMontreal-Bold PortfolioItem__container--data--about--title">ROLE</p>
+          <p class="NueMontreal PortfolioItem__container--data--about--text">
+            CREATIVE DIRECTOR &<br />PROJECT LEADER
+          </p>
+        </div>
+
+        <div>
+          <p class="NeueMontreal-Bold PortfolioItem__container--data--about--title">DATE</p>
+          <p class="NueMontreal PortfolioItem__container--data--about--text">JAN, 2020</p>
         </div>
       </div>
 
-      <div class="PortfolioItem__container--data--about">
-        <p class="NeueMontreal-Bold PortfolioItem__container--data--about--title">ROLE</p>
-        <p class="NueMontreal PortfolioItem__container--data--about--text">
-          CREATIVE DIRECTOR &<br />PROJECT LEADER
-        </p>
-
-        <p class="NeueMontreal-Bold PortfolioItem__container--data--about--title">DATE</p>
-        <p class="NueMontreal PortfolioItem__container--data--about--text">JAN, 2020</p>
+      <div class="PortfolioItem__container--img--top">
+        <img src="~assets/images/MiltonGlaserColourIcon.png" class="PortfolioItem__container--img" />
       </div>
-    </div>
 
-    <img src="~assets/images/MiltonGlaserColourIcon.png" class="PortfolioItem__container--img" />
+    </div>
   </div>
 </template>
 
@@ -47,15 +53,20 @@ export default {
   display: flex;
   justify-content: space-between;
   width: 80%;
-  margin: auto;
   align-items: center;
+  margin: auto auto 4rem;
 }
 
 .PortfolioItem__container {
-  width: 60%;
-  max-height: 10rem;
+  width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  -ms-flex-order: 2;
+}
+
+.PortfolioItem__container--img--top{
+  -ms-flex-order: 1;
 }
 
 .PortfolioItem__container--data--num {
@@ -77,7 +88,7 @@ export default {
 
 .PortfolioItem__container--data {
   display: flex;
-  width: 50%;
+  width: 40%;
   text-align: center;
 }
 
@@ -86,9 +97,10 @@ export default {
 }
 
 .PortfolioItem__container--img {
-  width: 40%;
+  width: 80%;
   filter: grayscale(100%);
   transition: 0.5s;
+  margin-left: 10%;
 }
 
 .PortfolioItem__container--img:hover {
@@ -103,4 +115,71 @@ export default {
 .PortfolioItem__container--data--about--text {
   font-size: 0.8rem;
 }
+
+@media screen and (max-width: 425px) {
+  .PortfolioItem {
+    width: 96%;
+    margin: auto 2% 4rem;
+  }
+
+  .PortfolioItem__container--img--top{
+    order: 1;
+  }
+  .PortfolioItem__container--data--about{
+    order: 2;
+  }
+
+  .PortfolioItem__container {
+    display: unset;
+    align-items: center;
+  }
+
+  .PortfolioItem__container--data--num {
+    font-size: 0.6rem;
+  }
+
+  .PortfolioItem__container--data--title {
+    font-size: 1.3rem;
+  }
+
+  .PortfolioItem__container--data--subTitle {
+    font-size: 0.7rem;
+    margin-top: 0;
+  }
+
+  .PortfolioItem__container--data {
+    display: flex;
+    width: 50%;
+    text-align: center;
+  }
+
+  .PortfolioItem__container--data--about {
+    width: 50%;
+    margin-left: 10%;
+  }
+
+  .PortfolioItem__container--img--top{
+    display: flex;
+  }
+
+  .PortfolioItem__container--img {
+    width: 80%;
+    filter: grayscale(100%);
+    transition: 0.5s;
+  }
+
+  .PortfolioItem__container--img:hover {
+    filter: grayscale(0%);
+    transition: 0.5s;
+  }
+
+  .PortfolioItem__container--data--about--title {
+    font-size: 0.7rem;
+  }
+
+  .PortfolioItem__container--data--about--text {
+    font-size: 0.7rem;
+  }
+}
+
 </style>

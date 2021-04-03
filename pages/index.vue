@@ -32,7 +32,7 @@
     </p>
 
     <PortfolioItem/>
-    <br/><br/>
+
     <v-divider class="divider"/>
     <PortfolioItem/>
 
