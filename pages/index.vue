@@ -153,7 +153,7 @@ export default {
     margin-left: 5%;
   }
 
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 600px) {
     .light {
       font-size: 2em;
     }

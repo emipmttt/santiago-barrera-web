@@ -133,7 +133,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 600px) {
 
   .navigateBar{
     width: 96%;

@@ -116,7 +116,7 @@ export default {
   font-size: 0.8rem;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 600px) {
   .PortfolioItem {
     width: 96%;
     margin: auto 2% 4rem;

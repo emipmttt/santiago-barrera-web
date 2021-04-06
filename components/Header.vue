@@ -77,7 +77,7 @@ export default {
   margin-right: 64px
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 600px) {
   .button_app_style {
     margin: 0;
   }
