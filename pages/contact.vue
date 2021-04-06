@@ -39,7 +39,7 @@
       </v-row>
       <v-row>
         <v-col>EMAIL</v-col>
-        <v-col class="ContactLinks__Name">SANTIAGOBARRERA.DESIGN@GMAIL.COM</v-col>
+        <v-col class="ContactLinks__Name ContactLinks__Name--mail">SANTIAGOBARRERA.DESIGN@GMAIL.COM</v-col>
       </v-row>
       <v-row>
         <v-col>INSTAGRAM</v-col>
@@ -181,6 +181,51 @@ export default {
   .ContactLinks__Name{
     max-width: 50%;
   }
+}
+
+@media screen and (max-width: 400px) {
+  .contactTitle{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .contactTitle{
+    margin-left: 2%;
+  }
+
+  .navigateBar__title{
+    font-size: 1.4rem;
+  }
+
+  .contactTitle__img{
+    width: 5rem;
+  }
+
+  .contactTitle__txt{
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .contactSubTitle{
+    margin-left: 5%;
+    font-size: 2.5rem;
+    line-height: 3.8rem;
+  }
+
+  .ContactLinks{
+    font-size: .7rem;
+    width: 80%;
+    margin: 6rem 2%;
+  }
+
+  .ContactLinks__Name{
+    max-width: 50%;
+  }
+
+  .ContactLinks__Name--mail{
+    font-size: .5rem;
+  }
+
 }
 
 </style>
