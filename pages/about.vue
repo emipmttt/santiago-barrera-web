@@ -1,7 +1,7 @@
 <template>
   <div class="body--background-primary">
     <v-container>
-      <v-row>
+      <v-row class="flex-column-reverse flex-md-row">
         <v-col class="col-md-4 col__image_background">
           <p class="Hatton-Light text--vertical">
             SANTIAGO <br>
@@ -136,4 +136,10 @@ export default {
   text-align: center;
 }
 
+@media screen and (max-width: 600px) {
+  .text--vertical {
+    font-size: 140px;
+    margin: 0;
+  }
+}
 </style>

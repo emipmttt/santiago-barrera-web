@@ -2,7 +2,7 @@
   <div>
     <div class="navigateBar">
       <div class="navigateBar__Back">
-        <img src="~assets/images/BACK.svg" class="navigateBar__Back--img"/>
+<!--        <img src="~assets/images/BACK.svg" class="navigateBar__Back&#45;&#45;img"/>-->
         <p class="navigateBar__Back--txt NueMontreal">BACK</p>
       </div>
 

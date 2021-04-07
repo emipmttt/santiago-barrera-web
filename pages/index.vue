@@ -84,8 +84,22 @@ export default {
 
   async mounted() {
     // USANDO SERVER
-    const request = await fetch('/api/magia', {
-      method: 'POST'
+    const request = await fetch('/api/user/create', {
+      method: 'POST',
+
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+
+      body: JSON.stringify({
+        name: 'Christopher',
+        email: 'christopher@mail.com',
+        password: 'soy genial uwu',
+        active: true,
+        type: 1
+      })
+
     });
     const response = await request.json();
     console.log(response);
