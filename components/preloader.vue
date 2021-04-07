@@ -25,8 +25,8 @@ export default {
   display: flex;
   top: 0;
   left: 0;
-  min-width: 100%;
-  min-height: 100vh;
+  width: 100%;
+  height: 100vh;
   background: #EDF2F4;
 }
 
@@ -58,10 +58,12 @@ export default {
 
 .preloader__container{
   margin: auto;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .preloader__container__text{
-  left: 70%;
   font-size: 4rem;
 }
 
@@ -83,7 +85,14 @@ export default {
   33%{transform: scale(1); right: -100px; top: 0px;}
   35%{transform: scale(2); right: 100px; top: 0px;}
   60%{transform: scale(2); right: 120%; top: 0px;}
-  100%{transform: scale(2); right: 120%; top: 0px;}
+  100%{color: #edf2f4; transform: scale(2); right: 120%; top: 0px;}
+}
+
+@media screen and (max-width: 600px) {
+  #preloader__animatedCircle{
+    height: 75px;
+    width: 75px;
+  }
 }
 
 </style>

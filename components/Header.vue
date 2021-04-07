@@ -58,7 +58,7 @@ export default {
   }),
 
   async mounted() {
-    setTimeout(this.visible, 8000)
+    setTimeout(this.visible, 7000)
   },
 
   methods: {

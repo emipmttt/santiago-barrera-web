@@ -1,5 +1,5 @@
 <template>
-  <div id="index">
+  <div id="index" class="index">
     <v-container>
       <v-row class="mt-0 mt-md-8">
         <v-col class="col-md-12 img-bg py-6">
@@ -129,7 +129,6 @@ export default {
     letter-spacing: 5px;
     line-height: normal;
   }
-
 
   .super-text {
     color: #ef712f;
