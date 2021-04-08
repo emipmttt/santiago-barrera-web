@@ -10,6 +10,14 @@ module.exports = {
     return User.findOne({
       email
     });
+  },
+
+  async updateById(id, userEntity) {
+    return User.findOneAndUpdate({ id }, userEntity);
+  },
+
+  async deleteById(id) {
+    return User.findOneAndDelete({ id });
   }
 }
 
