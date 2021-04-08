@@ -9,4 +9,5 @@ module.exports = {
   compare(plainText, hash) {
     return bcrypt.compare(plainText, hash);
   }
+
 };

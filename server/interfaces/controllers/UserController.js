@@ -70,6 +70,7 @@ module.exports = {
         message: token
       });
 
+
     } catch (e) {
       console.log(e);
     }
