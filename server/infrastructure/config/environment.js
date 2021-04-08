@@ -5,6 +5,10 @@ const environment = () => {
       user: 'sb01',
       password: 'Artiswisdom',
       url: 'mongodb+srv://sb01:Artiswisdom@sb01.yh0n5.mongodb.net/SB01?retryWrites=true&w=majority',
+    },
+
+    jsonwebtoken: {
+      secret: 'SER_DEV_ES_GENIAL'
     }
   }
 

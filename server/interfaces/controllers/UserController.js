@@ -1,5 +1,7 @@
 const CreateUser = require("../../application/user_cases/CreateUser");
 const findUser = require("../../application/user_cases/FindUserByEmail");
+const { hash, compare } = require("../../infrastructure/security/HashManager");
+const { generate } = require("../../infrastructure/security/TokenManager");
 
 module.exports = {
   async registerUser(req, res) {
@@ -22,12 +24,50 @@ module.exports = {
         });
       }
 
-      const user = await CreateUser(name, email, password, active, type);
+      const passwordHash = await hash(password);
+      const user = await CreateUser(name, email, passwordHash, active, type);
 
       return res.json({
         ok: true,
         data: user,
-        message: 'un_token'
+        message: await generate({
+          id: user.id,
+          name,
+          email,
+        })
+      });
+
+    } catch (e) {
+      console.log(e);
+    }
+  },
+
+  async loginUser(req, res) {
+    try {
+
+      const userExist = await findUser(req.body.email);
+
+      const wrongResponse = {
+        ok: false,
+        error: 'Wrong credentials'
+      };
+
+      if (userExist === null) return res.json(wrongResponse);
+
+      const passwordIsCorrect = await compare(req.body.password, userExist.password);
+
+      if (!passwordIsCorrect) return res.json(wrongResponse);
+
+      const token = await generate({
+        id: userExist.id,
+        name: userExist.id,
+        email: userExist.email
+      });
+
+      return res.json({
+        ok: true,
+        data: userExist,
+        message: token
       });
 
     } catch (e) {

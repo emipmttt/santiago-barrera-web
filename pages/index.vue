@@ -84,7 +84,7 @@ export default {
 
   async mounted() {
     // USANDO SERVER
-    const request = await fetch('/api/user/create', {
+    const request = await fetch('/api/user/login', {
       method: 'POST',
 
       headers: {
@@ -93,11 +93,8 @@ export default {
       },
 
       body: JSON.stringify({
-        name: 'Christopher',
-        email: 'christopher@mail.com',
+        email: 'christopher5@mail.com',
         password: 'soy genial uwu',
-        active: true,
-        type: 1
       })
 
     });
