@@ -6,6 +6,8 @@ const deleteById = require("../../application/user_cases/DeleteUserById");
 const { hash, compare } = require("../../infrastructure/security/HashManager");
 const { generate } = require("../../infrastructure/security/TokenManager");
 
+const sendEmailRecover = require("../email/SendEmailRecover");
+
 module.exports = {
   async registerUser(req, res) {
     try {
@@ -101,6 +103,65 @@ module.exports = {
       return res.json({
         ok: true,
         message: 'Deleted'
+      });
+
+    } catch (e) {
+      console.log(e);
+    }
+  },
+
+  async sendEmailRecover(req, res) {
+    try {
+      const userExist = await findUser(req.body.email);
+
+      const successResponse = {
+        ok: true,
+        message: 'email send'
+      };
+
+      if (userExist === null) {
+        return res.json(successResponse);
+      }
+
+      const emailHash = await hash(req.body.email);
+      await sendEmailRecover(req.body.email, emailHash + Date.now());
+
+      return res.json(successResponse);
+
+    } catch (e) {
+      console.log(e);
+    }
+  },
+
+  async changePassword(req, res) {
+    try {
+      const userExist = await findUser(req.body.email);
+      const { email, emailHash, password } = req.body;
+      const emailMatch = await compare(email, emailHash);
+
+      if (userExist === null) {
+        return res.send({
+          ok: false,
+          error: 'Email no exist'
+        });
+      }
+
+      if (!emailMatch) {
+        return res.send({
+          ok: false,
+          message: 'ACCESS DENIED'
+        });
+      }
+
+      const passwordHash = await hash(password);
+
+      await updateUserById(userExist.id, {
+        password: passwordHash
+      });
+
+      return res.json({
+        ok: true,
+        message: 'PASSWORD CHANGED'
       });
 
     } catch (e) {
