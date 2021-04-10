@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="navigateBar">
-      <div class="navigateBar__Back">
-<!--        <img src="~assets/images/BACK.svg" class="navigateBar__Back&#45;&#45;img"/>-->
+      <v-btn text class="navigateBar__Back">
+        <img src="~assets/images/BACK.svg" class="navigateBar__Back--img"/>
         <p class="navigateBar__Back--txt NueMontreal">BACK</p>
-      </div>
+      </v-btn>
 
       <div  class="navigateBar__title Hatton-Light">
         <p>CONTACT ME</p>
@@ -66,10 +66,6 @@ export default {
   margin-left: 5%;
 }
 
-.navigateBar__Back:hover{
-  cursor: pointer;
-}
-
 .navigateBar__Back{
   display: flex;
   justify-content: space-between;
@@ -118,7 +114,7 @@ export default {
 }
 
 @media screen and (max-width: 768px) {
-  .contactTitle,{
+  .contactTitle{
     margin-left: 0;
   }
 
@@ -137,7 +133,7 @@ export default {
 
   .navigateBar{
     width: 96%;
-    margin-left: 2%;
+    margin-left: 0;
   }
 
   .navigateBar__Back--img{
