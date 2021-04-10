@@ -10,11 +10,11 @@
       </div>
 
       <div class="form">
-        <v-form>
-          <p class="form__Title NeueMontreal-Bold">Iniciar Sesion</p>
+        <v-form class="fom--body">
+          <p class="form__Title NeueMontreal-Bold">Login</p>
           <v-text-field
             color="#FF8D3B"
-            label="Correo Electronico"
+            label="Email"
           />
           <v-text-field
             class="form__field"
@@ -23,7 +23,7 @@
             :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
             :type="show1 ? 'text' : 'password'"
             name="input-10-1"
-            label="Contraseña"
+            label="Password"
             @click:append="show1 = !show1"
           ></v-text-field>
 
@@ -33,13 +33,14 @@
             dark
             elevation="4"
             block
-          >Iniciar Seseión</v-btn>
+          >Log In</v-btn>
 
           <v-btn
             color="#FF8D3B"
             dark
             text
-          >Olvide mi Contraseña</v-btn>
+            block
+          >Recover Password</v-btn>
 
         </v-form>
       </div>
@@ -84,6 +85,10 @@ export default {
   border-top-left-radius: 5px;
 }
 
+.fom--body{
+  width: 100%;
+}
+
 .form{
   width: 50%;
   padding: 10%;
@@ -102,6 +107,11 @@ export default {
 
 .form__btn--1{
   margin: 1rem 0;
+}
+
+.form__btn--2{
+  display: flex;
+  justify-content: space-between;
 }
 
 </style>

@@ -4,14 +4,14 @@
 
     <div class="adminModule__top">
       <div class="adminModule__top--module">
-        <p class="adminModule__top--title NeueMontreal-Bold">Usuarios</p>
+        <p class="adminModule__top--title NeueMontreal-Bold">Users</p>
         <v-btn
           color="#FF8D3B"
           dark
           elevation="4"
         >
           <v-icon>mdi-plus</v-icon>
-          Añadir Usuario
+          Add User
         </v-btn>
       </div>
 
@@ -25,22 +25,22 @@
 
               </th>
               <th class="text-left">
-                Nombre
+                Name
               </th>
               <th class="text-left">
-                Correo Electronico
+                Email
               </th>
               <th class="text-left">
-                Fecha de Nacimiento
+                Date of Birth
               </th>
               <th class="text-left">
-                Estado
+                Country
               </th>
               <th class="text-left">
-                Genero
+                Gender
               </th>
               <th class="text-left">
-                Permisos
+                Permissions
               </th>
               <th class="text-left"></th>
             </tr>
@@ -62,6 +62,7 @@
               <td>{{item.dateBorn}}</td>
               <td>{{item.state}}</td>
               <td>{{item.gender}}</td>
+              <td>{{item.permissions}}</td>
               <td>
                 <v-icon color="#FF8D3B">
                   mdi-pencil
@@ -87,27 +88,27 @@ export default {
     return {
       Users:[
         {
-          name: 'Nombre de Usuario',
-          email: 'Usuario@gmail.com',
+          name: 'Name User',
+          email: 'User@gmail.com',
           dateBorn: '00/00/0000',
-          state: "Mexico",
-          gender: "Masculino",
+          state: "Germany",
+          gender: "Male",
           permissions: "all"
         },
         {
-          name: 'Nombre de Usuario',
-          email: 'Usuario@gmail.com',
+          name: 'Name User',
+          email: 'User@gmail.com',
           dateBorn: '00/00/0000',
-          state: "Mexico",
-          gender: "Masculino",
+          state: "Germany",
+          gender: "Male",
           permissions: "all"
         },
         {
-          name: 'Nombre de Usuario',
-          email: 'Usuario@gmail.com',
+          name: 'Name User',
+          email: 'User@gmail.com',
           dateBorn: '00/00/0000',
-          state: "Mexico",
-          gender: "Masculino",
+          state: "Germany",
+          gender: "Male",
           permissions: "all"
         }
       ]
