@@ -3,11 +3,12 @@
     color="#edf2f4"
     app
     elevate-on-scroll
+    v-if="false"
   >
 
     <v-app-bar-nav-icon class="d-xs-flex d-md-none"/>
 
-    <preloader v-if="isVisible"/>
+    <preloader v-if="false"/>
 
     <v-spacer class="d-none d-md-flex" />
     <v-toolbar-items class="d-none d-md-flex">
