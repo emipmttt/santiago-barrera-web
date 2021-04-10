@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="footer" >
     <div class="footer__row">
       <h1 class="Hatton-Light">
         LET'S CREATE SOMETHING <br />
