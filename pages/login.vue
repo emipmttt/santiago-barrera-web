@@ -2,9 +2,10 @@
   <div class="container NueMontreal">
     <div class="login">
       <div class="login__left NeueMontreal-Bold">
-        <div>SANTIAGO
+        <div>
+          SANTIAGO
           <br/>
-           BARRERA
+          BARRERA
         </div>
       </div>
 
