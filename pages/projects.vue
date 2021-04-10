@@ -43,6 +43,7 @@ export default {
       const response = await fetch('/api/projects');
       const data = await response.json();
       console.log(data);
+
     }
   }
 }
