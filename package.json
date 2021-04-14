@@ -9,6 +9,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "core-js": "^3.9.1",
     "eventsource-polyfill": "^0.9.6",
