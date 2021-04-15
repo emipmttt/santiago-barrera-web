@@ -170,7 +170,7 @@ export default {
     width: 100%;
     box-shadow: 0 3px 3px 1px rgba(0, 0, 0, 0.2);
     margin: 14.5vh auto auto;
-    height: 70vh;
+    height: 86vh;
     border-radius: 5px;
   }
 

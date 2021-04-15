@@ -1,39 +1,43 @@
 <template>
-  <v-navigation-drawer
-    app
-    dark
-    permanent
-    color="#FF8D3B"
-    class="NeueMontreal-Bold"
-  >
-    <v-list-item>
-      <v-list-item-content>
-        <v-list-item-title class="bar__title">
-          <img :src="require('~/assets/images/SantiagoBarreraLogoWhite.svg')" />
-        </v-list-item-title>
-      </v-list-item-content>
-    </v-list-item>
+  <div>
+    <v-app-bar-nav-icon @click="activeDrawer = !activeDrawer"/>
 
-    <v-list dense nav>
-      <v-list-item link>
-        <v-list-item-icon>
-          <v-icon> mdi-store </v-icon>
-        </v-list-item-icon>
+    <v-navigation-drawer
+      app
+      dark
+      color="#FF8D3B"
+      class="NeueMontreal-Bold"
+      v-model="activeDrawer"
+    >
+      <v-list-item>
         <v-list-item-content>
-          <v-list-item-title>Projects</v-list-item-title>
+          <v-list-item-title class="bar__title">
+            <img :src="require('~/assets/images/SantiagoBarreraLogoWhite.svg')" />
+          </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
 
-      <v-list-item @click="logout">
-        <v-list-item-icon>
-          <v-icon> mdi-exit-to-app </v-icon>
-        </v-list-item-icon>
-        <v-list-item-content>
-          <v-list-item-title>Logout</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-    </v-list>
-  </v-navigation-drawer>
+      <v-list dense nav>
+        <v-list-item link>
+          <v-list-item-icon>
+            <v-icon> mdi-store </v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>Projects</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-list-item @click="logout">
+          <v-list-item-icon>
+            <v-icon> mdi-exit-to-app </v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>Logout</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+  </div>
 </template>
 
 <script>
@@ -44,6 +48,11 @@ export default {
       this.$router.push("/");
     },
   },
+  data(){
+    return{
+      activeDrawer:true
+    }
+  }
 };
 </script>
 
