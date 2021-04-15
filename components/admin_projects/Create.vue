@@ -50,10 +50,8 @@
 
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn :disabled="loading" color="primary" text @click="dialog = false">
-          Cancel
-        </v-btn>
-        <v-btn :disabled="loading" color="primary" text @click="create">
+        <v-btn :disabled="loading" text @click="dialog = false"> Cancel </v-btn>
+        <v-btn :disabled="loading" color="#FF8D3B" text @click="create">
           Create
         </v-btn>
       </v-card-actions>
@@ -96,7 +94,7 @@ export default {
         return;
       }
 
-      this.$router.push("/admin_projects");
+      location.reload();
     },
   },
 };

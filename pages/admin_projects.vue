@@ -4,44 +4,16 @@
       <div><h1>Proyectos</h1></div>
       <Create />
     </div>
+    <List />
   </div>
 </template>
 
 <script>
 import Create from "~/components/admin_projects/Create.vue";
+import List from "~/components/admin_projects/List.vue";
 export default {
   layout: "admin",
   name: "administrative_module",
-  components: { Create },
-  data() {
-    return {
-      Users: [
-        {
-          name: "Name User",
-          email: "User@gmail.com",
-          dateBorn: "00/00/0000",
-          state: "Germany",
-          gender: "Male",
-          permissions: "all",
-        },
-        {
-          name: "Name User",
-          email: "User@gmail.com",
-          dateBorn: "00/00/0000",
-          state: "Germany",
-          gender: "Male",
-          permissions: "all",
-        },
-        {
-          name: "Name User",
-          email: "User@gmail.com",
-          dateBorn: "00/00/0000",
-          state: "Germany",
-          gender: "Male",
-          permissions: "all",
-        },
-      ],
-    };
-  },
+  components: { Create, List },
 };
 </script>

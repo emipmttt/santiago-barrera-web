@@ -1,62 +1,77 @@
 <template>
   <div class="mt-15 PortfolioItem">
-      <div class="PortfolioItem__container--data">
-        <p class="NueMontreal PortfolioItem__container--data--num">
-          {{ index }}
+    <div class="PortfolioItem__container--data">
+      <p class="NueMontreal PortfolioItem__container--data--num">
+        {{ index }}
+      </p>
+
+      <div>
+        <p class="Hatton PortfolioItem__container--data--title">
+          {{ project.title }}
         </p>
 
-        <div>
-          <p class="Hatton PortfolioItem__container--data--title">
-            {{ project.title }}
-          </p>
+        <p class="NueMontreal PortfolioItem__container--data--subTitle">
+          {{ project.description }}
+        </p>
 
-          <p class="NueMontreal PortfolioItem__container--data--subTitle">
-            {{ project.description }}
-          </p>
-
-          <p>
-            <v-icon
-              @click=""
-            > mdi-plus-circle-outline </v-icon>
-          </p>
-        </div>
+        <p>
+          <v-icon @click="$router.push('/project')">
+            mdi-plus-circle-outline
+          </v-icon>
+        </p>
+      </div>
     </div>
 
     <div class="PortfolioItem__container">
       <div class="PortfolioItem__container--data--about">
         <div>
-          <p class="NeueMontreal-Bold PortfolioItem__container--data--about--title">ROLE</p>
+          <p
+            class="NeueMontreal-Bold PortfolioItem__container--data--about--title"
+          >
+            ROLE
+          </p>
           <p class="NueMontreal PortfolioItem__container--data--about--text">
             {{ project.role }}
           </p>
         </div>
 
         <div>
-          <p class="NeueMontreal-Bold PortfolioItem__container--data--about--title">DATE</p>
+          <p
+            class="NeueMontreal-Bold PortfolioItem__container--data--about--title"
+          >
+            DATE
+          </p>
           <p class="NueMontreal PortfolioItem__container--data--about--text">
-            {{ project.date }}
+            {{ new Date(project.date).toLocaleDateString() }}
           </p>
         </div>
       </div>
 
       <div class="PortfolioItem__container--img--top">
-        <img src="~assets/images/MiltonGlaserColourIcon.png" class="PortfolioItem__container--img" />
+        <img
+          :src="findFirstImage(project.content)"
+          class="PortfolioItem__container--img"
+        />
       </div>
-
     </div>
   </div>
 </template>
 
 <script>
-
 export default {
   name: "PortfolioItem",
-  props: ["index", "project"]
+  props: ["index", "project"],
+  methods: {
+    findFirstImage(content) {
+      return content.find((element) => {
+        return element.type == "IMAGE";
+      }).content;
+    },
+  },
 };
 </script>
 
 <style scoped>
-
 .PortfolioItem {
   display: flex;
   justify-content: space-between;
@@ -73,7 +88,7 @@ export default {
   -ms-flex-order: 2;
 }
 
-.PortfolioItem__container--img--top{
+.PortfolioItem__container--img--top {
   -ms-flex-order: 1;
 }
 
@@ -130,10 +145,10 @@ export default {
     margin: auto 2% 4rem;
   }
 
-  .PortfolioItem__container--img--top{
+  .PortfolioItem__container--img--top {
     order: 1;
   }
-  .PortfolioItem__container--data--about{
+  .PortfolioItem__container--data--about {
     order: 2;
   }
 
@@ -166,7 +181,7 @@ export default {
     margin-left: 10%;
   }
 
-  .PortfolioItem__container--img--top{
+  .PortfolioItem__container--img--top {
     display: flex;
   }
 
@@ -189,5 +204,4 @@ export default {
     font-size: 0.7rem;
   }
 }
-
 </style>

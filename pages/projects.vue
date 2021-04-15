@@ -19,14 +19,15 @@
       />
     </template>
 
-    <template>
-      <h1 class="text-center mt-10 Hatton-Light">¡Hi! No projects :( yet</h1>
+    <template v-else>
+      <h1 class="text-center mt-10 Hatton-Light">No projects yet :(</h1>
     </template>
   </div>
 </template>
 
 <script>
 import PortfolioItem from "../components/PortfolioItem";
+import getProjects from "~/middleware/getProjects";
 
 export default {
   name: "projects",
@@ -35,40 +36,17 @@ export default {
     projects: [],
   }),
 
+  async mounted() {
+    const projects = await getProjects();
+    this.projects = projects;
+  },
+
   // async mounted() {
   //   // await this.getAllProjects();
   // },
 
   components: {
     PortfolioItem,
-  },
-
-  methods: {
-    async getAllProjects() {
-      // const response = await fetch('/api/projects');
-      // const result = await response.json();
-      // this.projects = result.data;
-      // console.log(this.projects);
-
-      const response_create = await fetch("/api/projects/create", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({
-          title: "un titulo",
-          description: "bonis :D",
-          role: "uno roll amigo",
-          date: Date.now(),
-          url: "hhoeofe/",
-          content: [],
-        }),
-      });
-
-      const data_create = await response_create.json();
-
-      console.log(data_create);
-    },
   },
 };
 </script>

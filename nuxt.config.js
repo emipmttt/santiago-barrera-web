@@ -1,32 +1,26 @@
-import colors from 'vuetify/es5/util/colors'
-
+import colors from "vuetify/es5/util/colors";
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - app',
-    title: 'app',
+    titleTemplate: "%s - Santiago Barrera",
+    title: "Santiago Barrera",
     htmlAttrs: {
-      lang: 'en'
+      lang: "en"
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { hid: "description", name: "description", content: "" }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    "@/assets/css/fonts.css"
-  ],
+  css: ["@/assets/css/fonts.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -34,68 +28,65 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    ['@nuxtjs/vuetify', {
+    [
+      "@nuxtjs/vuetify",
+      {
+        theme: {
+          dark: false,
 
-      theme: {
-        dark: false,
-
-        options: {
-          customProperties: true
-        },
-
-        light: {
-          background: '#d0f0c0'
-        }
-      }
-    }]
-  ],
-
-  serverMiddleware: [
-    { path: "/api", handler: "~/server/main.js" },
-  ],
-
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    ['nuxt-i18n', {
-      // RUTAS PERSONALIZADAS
-      parsePages: false,
-
-      // RUTAS
-      pages: {
-        // NOMBRE DEL COMPONENTE
-        inspire: {
-          // PATH DE LA RUTA CON IDIOMA
-          en: '/inspire',
-          es: '/inspiracion',
-        }
-      },
-
-      // IDIOMAS DISPONIBLES
-      locales: ['en', 'es'],
-      // IDIOMA POR DEFECTO
-      defaultLocale: 'es',
-
-      vueI18n: {
-        // IDIOMA POR DEFECTO SI NO ESTA EL QUE BUSCAS
-        fallbackLocale: 'en',
-
-        // TRADUCCIONES
-        messages: {
-          en: {
-            greeting: 'Hello world!'
+          options: {
+            customProperties: true
           },
-          es: {
-            greeting: '¡Hola mundo!'
+
+          light: {
+            background: "#d0f0c0"
           }
         }
       }
-    }
+    ]
+  ],
+
+  serverMiddleware: [{ path: "/api", handler: "~/server/main.js" }],
+
+  // Modules: https://go.nuxtjs.dev/config-modules
+  modules: [
+    [
+      "nuxt-i18n",
+      {
+        // RUTAS PERSONALIZADAS
+        parsePages: false,
+
+        // RUTAS
+        pages: {
+          // NOMBRE DEL COMPONENTE
+        },
+
+        // IDIOMAS DISPONIBLES
+        locales: ["en", "es"],
+        // IDIOMA POR DEFECTO
+        defaultLocale: "es",
+
+        vueI18n: {
+          // IDIOMA POR DEFECTO SI NO ESTA EL QUE BUSCAS
+          fallbackLocale: "en",
+
+          // TRADUCCIONES
+          messages: {
+            en: {
+              greeting: "Hello world!"
+            },
+            es: {
+              greeting: "¡Hola mundo!"
+            }
+          }
+        }
+      }
     ]
   ],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
+    customVariables: ["~/assets/variables.scss"],
     theme: {
       dark: true,
       themes: {
@@ -113,6 +104,5 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  }
-}
+  build: {}
+};

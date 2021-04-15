@@ -34,7 +34,16 @@
       A CARFUL SELECTION OF MY WORK
     </p>
 
-    <!-- <PortfolioItem />
+    <template v-if="projects.length > 0">
+      <PortfolioItem
+        v-for="(project, index) in projects"
+        :key="index"
+        :index="index"
+        :project="project"
+      />
+    </template>
+
+    <!-- 
 
     <v-divider class="divider" />
     <PortfolioItem /> -->
@@ -81,12 +90,13 @@ export default {
   data: () => ({
     index: 0,
     words: ["CREATE", "CREATE", "AWESOME", "LOVE", "ROSE"],
+    projects: [],
   }),
 
   async mounted() {
     this.randomIndex();
     const projects = await getProjects();
-    console.log(projects);
+    this.projects = projects;
   },
 
   methods: {
