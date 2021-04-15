@@ -73,9 +73,9 @@ export default {
       }
 
       if (!(await axios.post("/login", {user})) === false){
-       // this.$router.push("/en/administrative_module");
 
         this.$store.commit( 'sessionActive' , user)
+        this.$router.push("/en/administrative_module");
 
       }else{
         console.log("nope")

@@ -1,79 +1,83 @@
 <template>
-  <div class="adminModule NueMontreal">
+  <div >
     <navigation_drawer/>
 
-    <div class="adminModule__top">
-      <div class="adminModule__top--module">
-        <p class="adminModule__top--title NeueMontreal-Bold">Users</p>
-        <v-btn
-          color="#FF8D3B"
-          dark
-          elevation="4"
-        >
-          <v-icon>mdi-plus</v-icon>
-          Add User
-        </v-btn>
+    <div class="adminModule NueMontreal">
+
+      <div class="adminModule__top">
+        <div class="adminModule__top--module">
+          <p class="adminModule__top--title NeueMontreal-Bold">Users</p>
+          <v-btn
+            color="#FF8D3B"
+            dark
+            elevation="4"
+          >
+            <v-icon>mdi-plus</v-icon>
+            Add User
+          </v-btn>
+        </div>
+
+        <div class="adminTable">
+
+          <v-simple-table class="top">
+            <template v-slot:default>
+              <thead>
+              <tr>
+                <th class="text-left">
+
+                </th>
+                <th class="text-left">
+                  Name
+                </th>
+                <th class="text-left">
+                  Email
+                </th>
+                <th class="text-left">
+                  Date of Birth
+                </th>
+                <th class="text-left">
+                  Country
+                </th>
+                <th class="text-left">
+                  Gender
+                </th>
+                <th class="text-left">
+                  Permissions
+                </th>
+                <th class="text-left"></th>
+              </tr>
+              </thead>
+
+              <tbody>
+              <tr
+                v-for="item in Users"
+                :key="Users.Name"
+              >
+                <td>
+                  <v-avatar
+                    color="primary"
+                    size="36"
+                  ></v-avatar>
+                </td>
+                <td>{{item.name}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.dateBorn}}</td>
+                <td>{{item.state}}</td>
+                <td>{{item.gender}}</td>
+                <td>{{item.permissions}}</td>
+                <td>
+                  <v-icon color="#FF8D3B">
+                    mdi-pencil
+                  </v-icon>
+                </td>
+              </tr>
+              </tbody>
+            </template>
+          </v-simple-table>
+
+        </div>
       </div>
 
-      <div class="adminTable">
-
-        <v-simple-table class="top">
-          <template v-slot:default>
-            <thead>
-            <tr>
-              <th class="text-left">
-
-              </th>
-              <th class="text-left">
-                Name
-              </th>
-              <th class="text-left">
-                Email
-              </th>
-              <th class="text-left">
-                Date of Birth
-              </th>
-              <th class="text-left">
-                Country
-              </th>
-              <th class="text-left">
-                Gender
-              </th>
-              <th class="text-left">
-                Permissions
-              </th>
-              <th class="text-left"></th>
-            </tr>
-            </thead>
-
-            <tbody>
-            <tr
-              v-for="item in Users"
-              :key="Users.Name"
-            >
-              <td>
-                <v-avatar
-                  color="primary"
-                  size="36"
-                ></v-avatar>
-              </td>
-              <td>{{item.name}}</td>
-              <td>{{item.email}}</td>
-              <td>{{item.dateBorn}}</td>
-              <td>{{item.state}}</td>
-              <td>{{item.gender}}</td>
-              <td>{{item.permissions}}</td>
-              <td>
-                <v-icon color="#FF8D3B">
-                  mdi-pencil
-                </v-icon>
-              </td>
-            </tr>
-            </tbody>
-          </template>
-        </v-simple-table>
-
-      </div>
     </div>
   </div>
 </template>

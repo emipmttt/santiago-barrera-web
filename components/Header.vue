@@ -3,7 +3,6 @@
     color="#edf2f4"
     app
     elevate-on-scroll
-    v-if="false"
   >
 
     <v-app-bar-nav-icon class="d-xs-flex d-md-none"/>
