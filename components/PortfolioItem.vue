@@ -1,12 +1,17 @@
 <template>
   <div class="mt-15 PortfolioItem">
       <div class="PortfolioItem__container--data">
-        <p class="NueMontreal PortfolioItem__container--data--num">01</p>
+        <p class="NueMontreal PortfolioItem__container--data--num">
+          {{ index }}
+        </p>
+
         <div>
-          <p class="Hatton PortfolioItem__container--data--title">MILTON GLASER <br />COLOR ICON</p>
+          <p class="Hatton PortfolioItem__container--data--title">
+            {{ project.title }}
+          </p>
 
           <p class="NueMontreal PortfolioItem__container--data--subTitle">
-            A MAJOR RETROSPECTIVE EXHIBITION
+            {{ project.description }}
           </p>
 
           <p>
@@ -22,13 +27,15 @@
         <div>
           <p class="NeueMontreal-Bold PortfolioItem__container--data--about--title">ROLE</p>
           <p class="NueMontreal PortfolioItem__container--data--about--text">
-            CREATIVE DIRECTOR &<br />PROJECT LEADER
+            {{ project.role }}
           </p>
         </div>
 
         <div>
           <p class="NeueMontreal-Bold PortfolioItem__container--data--about--title">DATE</p>
-          <p class="NueMontreal PortfolioItem__container--data--about--text">JAN, 2020</p>
+          <p class="NueMontreal PortfolioItem__container--data--about--text">
+            {{ project.date }}
+          </p>
         </div>
       </div>
 
@@ -44,6 +51,7 @@
 
 export default {
   name: "PortfolioItem",
+  props: ["index", "project"]
 };
 </script>
 
@@ -52,7 +60,7 @@ export default {
 .PortfolioItem {
   display: flex;
   justify-content: space-between;
-  width: 80%;
+  width: 90%;
   align-items: center;
   margin: auto auto 4rem;
 }
