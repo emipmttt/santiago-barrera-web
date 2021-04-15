@@ -38,7 +38,7 @@
 
     <img src="~assets/images/banner.png" style="width: 100%" class="my-10"/>
 
-    <v-container>
+    <v-container class="mb-15">
       <v-row justify="center">
         <v-col class="col-12 col-md-8">
           <v-row class="d-flex flex-column flex-md-row">

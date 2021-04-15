@@ -35,7 +35,7 @@
     <v-spacer />
 
     <v-btn text class="d-none d-md-flex">
-      AVAILABLE WORK
+      AVAILABLE TO WORK
     </v-btn>
 
     <v-spacer class="d-none d-md-flex"/>

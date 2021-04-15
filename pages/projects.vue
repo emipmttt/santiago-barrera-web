@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <v-container class="mt-8">
       <v-row>
         <v-col class="col-md-12">
@@ -10,7 +9,6 @@
         </v-col>
       </v-row>
     </v-container>
-
 
     <PortfolioItem />
     <PortfolioItem />
@@ -27,28 +25,27 @@ export default {
   name: "projects",
 
   data: () => ({
-    projects: []
+    projects: [],
   }),
 
-  async mounted() {
-    await this.getAllProjects();
-  },
+  // async mounted() {
+  //   // await this.getAllProjects();
+  // },
 
   components: {
-    PortfolioItem
+    PortfolioItem,
   },
 
   methods: {
     async getAllProjects() {
-      const response = await fetch('/api/projects');
+      const response = await fetch("/api/projects");
+      console.log(response);
       const data = await response.json();
       console.log(data);
-
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>
-
 </style>

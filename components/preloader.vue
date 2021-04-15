@@ -3,7 +3,7 @@
   <div class="preloader" id="preloader_backgroundAnimation">
     <div class="preloader__container">
       <p class="preloader__container__text Hatton" id="preloader__container--animatedText">
-        Satiago<br/>Barrera
+        Santiago<br/>Barrera
       </p>
     </div>
     <div id="preloader__animatedCircle"/>

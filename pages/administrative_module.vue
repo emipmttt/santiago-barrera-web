@@ -16,7 +16,6 @@
       </div>
 
       <div class="adminTable">
-
         <v-simple-table class="top">
           <template v-slot:default>
             <thead>

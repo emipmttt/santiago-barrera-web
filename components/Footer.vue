@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer" >
+  <footer class="footer">
     <div class="footer__row">
       <h1 class="Hatton-Light">
         LET'S CREATE SOMETHING <br />
@@ -53,7 +53,23 @@ export default {};
   align-items: center;
 
   &__row {
-    width: 100%;
+    flex: 1;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    background: #dbdbdb;
+    color: #000;
+    display: block;
+    padding: 5% 10%;
+    justify-content: center;
+    align-items: center;
+
+    &__row {
+      width: 100%;
+      margin-bottom: 20%;
+    }
   }
 }
 
