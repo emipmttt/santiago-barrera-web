@@ -45,15 +45,15 @@ export default {
 
   methods: {
     async getAllProjects() {
-      const response = await fetch("/api/projects");
-      const result = await response.json();
-      this.projects = result.data;
-      console.log(this.projects);
+      // const response = await fetch('/api/projects');
+      // const result = await response.json();
+      // this.projects = result.data;
+      // console.log(this.projects);
 
-      /*const response_create = await fetch('/api/projects/create', {
-        method: 'POST',
+      const response_create = await fetch("/api/projects/create", {
+        method: "POST",
         headers: {
-          'Content-type': 'application/json'
+          "Content-type": "application/json",
         },
         body: JSON.stringify({
           title: "un titulo",
@@ -61,13 +61,13 @@ export default {
           role: "uno roll amigo",
           date: Date.now(),
           url: "hhoeofe/",
-          content: []
-        })
+          content: [],
+        }),
       });
 
       const data_create = await response_create.json();
 
-      console.log(data_create)*/
+      console.log(data_create);
     },
   },
 };
