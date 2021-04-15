@@ -54,6 +54,8 @@
 <script>
 
 import axios from "axios";
+import { mapMutations } from 'vuex'
+
 
 export default {
   name: "login",
@@ -64,16 +66,24 @@ export default {
     }
   },
   methods:{
-    validateUser(){
-
+    async validateUser() {
       const user = {
-        email: document.getElementById("email").value,
+        username: document.getElementById("email").value,
         password: document.getElementById("password").value
       }
 
-      axios.post("/api/users/login", {user})
+      if (!(await axios.post("/login", {user})) === false){
+       // this.$router.push("/en/administrative_module");
 
-    }
+        this.$store.commit( 'sessionActive' , user)
+
+      }else{
+        console.log("nope")
+      }
+    },
+    ...mapMutations({
+      sessionActive: 'sessionActive'
+    })
   }
 }
 </script>
