@@ -11,36 +11,36 @@
 
     <v-spacer class="d-none d-md-flex" />
     <v-toolbar-items class="d-none d-md-flex">
-      <v-btn text>
+      <v-btn text plain :ripple="false">
         WORK
       </v-btn>
 
-      <v-btn text>
+      <v-btn text plain :ripple="false">
         ABOUT
       </v-btn>
 
-      <v-btn text>
+      <v-btn text plain :ripple="false">
         CONTACT
       </v-btn>
 
-      <v-btn text>
+      <v-btn text plain :ripple="false">
         JOURNAL
       </v-btn>
 
-      <v-btn text>
+      <v-btn text plain :ripple="false">
         SHOP
       </v-btn>
     </v-toolbar-items>
 
     <v-spacer />
 
-    <v-btn text class="d-none d-md-flex">
+    <v-btn text class="d-none d-md-flex" plain :ripple="false">
       AVAILABLE WORK
     </v-btn>
 
     <v-spacer class="d-none d-md-flex"/>
 
-    <v-btn text class="button_app_style">
+    <v-btn text class="button_app_style Hatton-Light" plain :ripple="false">
       SANTIAGO <br>
       BARRERA
     </v-btn>
