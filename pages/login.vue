@@ -15,6 +15,7 @@
           <v-text-field
             color="#FF8D3B"
             label="Email"
+            id="email"
           />
           <v-text-field
             class="form__field"
@@ -25,6 +26,7 @@
             name="input-10-1"
             label="Password"
             @click:append="show1 = !show1"
+            id="password"
           ></v-text-field>
 
           <v-btn
@@ -33,6 +35,7 @@
             dark
             elevation="4"
             block
+            @click="validateUser()"
           >Log In</v-btn>
 
           <v-btn
@@ -40,7 +43,7 @@
             dark
             text
             block
-          >Recover Password</v-btn>
+          >Recover <br/> Password</v-btn>
 
         </v-form>
       </div>
@@ -49,6 +52,11 @@
 </template>
 
 <script>
+
+import axios from "axios";
+import { mapMutations } from 'vuex'
+
+
 export default {
   name: "login",
   data () {
@@ -56,6 +64,26 @@ export default {
       show1: false,
       password: '',
     }
+  },
+  methods:{
+    async validateUser() {
+      const user = {
+        username: document.getElementById("email").value,
+        password: document.getElementById("password").value
+      }
+
+      if (!(await axios.post("/login", {user})) === false){
+
+        this.$store.commit( 'sessionActive' , user)
+        this.$router.push("/en/administrative_module");
+
+      }else{
+        console.log("nope")
+      }
+    },
+    ...mapMutations({
+      sessionActive: 'sessionActive'
+    })
   }
 }
 </script>
@@ -80,7 +108,7 @@ export default {
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 3rem;
+  font-size: 300%;
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
 }
@@ -109,9 +137,39 @@ export default {
   margin: 1rem 0;
 }
 
-.form__btn--2{
-  display: flex;
-  justify-content: space-between;
+@media screen and (max-width: 850px) {
+  .login{
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .login{
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    box-shadow: 0 3px 3px 1px rgba(0, 0, 0, 0.2);
+    margin: 14.5vh auto auto;
+    height: 70vh;
+    border-radius: 5px;
+  }
+
+  .login__left{
+    width: 100%;
+    font-size: 150%;
+    padding: 5%;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+
+  .form{
+    width: 100%;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+  }
+
 }
 
 </style>
