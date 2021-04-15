@@ -1,5 +1,3 @@
-import projects from "../../../pages/projects";
-
 const Project = require("../orm/mongoose/schemas/Project");
 
 module.exports = {

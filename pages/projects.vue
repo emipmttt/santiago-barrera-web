@@ -40,6 +40,10 @@ export default {
     const projects = await getProjects();
     this.projects = projects;
 
+    fetch("/api/projects/details/6078a4d924c08760c0a316b4")
+    .then(r => r.json())
+    .then(console.log)
+
     /*const request = await  fetch('/api/projects/create', {
       method: 'POST',
 
