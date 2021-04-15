@@ -7,7 +7,7 @@ module.exports = {
   },
 
   async findAll() {
-    return Project.find();
+    return Project.find().populate("content");
   },
 
   async updateById(id, entity) {

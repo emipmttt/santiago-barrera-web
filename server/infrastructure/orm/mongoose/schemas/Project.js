@@ -1,4 +1,5 @@
 const mongoose = require("../mongoose");
+const Schema = mongoose.Schema;
 
 const projectSchema = new mongoose.Schema({
   title: String,
@@ -6,7 +7,10 @@ const projectSchema = new mongoose.Schema({
   role: String,
   date: Number,
   url: String,
-  content: Array
+  content: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Content'
+  }]
 });
 
 module.exports = mongoose.model('Project', projectSchema);

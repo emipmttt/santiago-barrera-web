@@ -49,7 +49,8 @@
 
       <div class="PortfolioItem__container--img--top">
         <img
-          :src="findFirstImage(project.content)"
+          v-if="project.content[0] !== undefined"
+          :src="project.content[0].content"
           class="PortfolioItem__container--img"
         />
       </div>
@@ -63,8 +64,9 @@ export default {
   props: ["index", "project"],
   methods: {
     findFirstImage(content) {
+      console.log(content);
       return content.find((element) => {
-        return element.type == "IMAGE";
+        return element.type === "IMAGE";
       }).content;
     },
   },

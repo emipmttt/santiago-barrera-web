@@ -39,6 +39,26 @@ export default {
   async mounted() {
     const projects = await getProjects();
     this.projects = projects;
+
+    /*const request = await  fetch('/api/projects/create', {
+      method: 'POST',
+
+      headers: {
+        'Content-type': 'application/json'
+      },
+
+      body: JSON.stringify({
+        title: "UN PROYECTO BEHANDE",
+        description: "IDK GUY I JUST WANT TO BE FREE",
+        role: "DEVELOPER",
+        date: 1200020,
+        url: "https://www.behance.net/gallery/100458665/Milton-Glaser-Colour-Icon-MoMa-Exhibition",
+      })
+    });
+
+    const response = await request.json();
+
+    console.log(response);*/
   },
 
   // async mounted() {
