@@ -4,21 +4,24 @@
       <v-row class="mt-0 mt-md-8">
         <v-col class="col-md-12 img-bg py-6">
           <h1 class="Hatton-Light light">
-            I’M SANTIAGO BARRERA, <br>
-            A COLUMBIAN GRAPHIC <br>
-            DESIGNER WITH A FOCUS <br>
-            ON EDITORIAL DESIGN <br>
+            I’M SANTIAGO BARRERA, <br />
+            A COLUMBIAN GRAPHIC <br />
+            DESIGNER WITH A FOCUS <br />
+            ON EDITORIAL DESIGN <br />
             & BRANDING.
           </h1>
 
           <h3 class="mt-4 NueMontreal" style="font-weight: 100">
-            DESIGN & ART LOVER. I ALSO LOVE <span class="super-text NeueMontreal-Bold">{{ words[index] }}</span>
+            DESIGN & ART LOVER. I ALSO LOVE
+            <span class="super-text NeueMontreal-Bold">{{ words[index] }}</span>
           </h3>
         </v-col>
 
         <v-col class="col-12 d-flex justify-md-end mt-4">
           <div>
-            <p class="connect-item NeueMontreal-Bold super-text mb-4">CONNECT:</p>
+            <p class="connect-item NeueMontreal-Bold super-text mb-4">
+              CONNECT:
+            </p>
             <p class="connect-item NueMontreal">BEHANCE</p>
             <p class="connect-item NueMontreal">INSTAGRAM</p>
             <p class="connect-item NueMontreal">LINKEDIN</p>
@@ -31,12 +34,12 @@
       A CARFUL SELECTION OF MY WORK
     </p>
 
-    <PortfolioItem/>
+    <!-- <PortfolioItem />
 
-    <v-divider class="divider"/>
-    <PortfolioItem/>
+    <v-divider class="divider" />
+    <PortfolioItem /> -->
 
-    <img src="~assets/images/banner.png" style="width: 100%" class="my-10"/>
+    <img src="~assets/images/banner.png" style="width: 100%" class="my-10" />
 
     <v-container class="mb-15">
       <v-row justify="center">
@@ -48,19 +51,18 @@
 
             <v-col class="col-12 col-md-8">
               <p class="NueMontreal mb-6">
-                Santiago is a student passionate about design and art. Currently in his third
-                year of Graphic Design at School of Design in George Brown College.
-                According to him, the most exciting and important part is to always learn
-                new skills that can be meticulously executed in designs, the use of colour
-                and contrast are his favourite subjects. Santiago is originally from
-                Colombia and speaks three languages, Spanish, Portuguese and English.
-                He lived in more than four countries (Colombia, Ecuador, Brazil and
+                Santiago is a student passionate about design and art. Currently
+                in his third year of Graphic Design at School of Design in
+                George Brown College. According to him, the most exciting and
+                important part is to always learn new skills that can be
+                meticulously executed in designs, the use of colour and contrast
+                are his favourite subjects. Santiago is originally from Colombia
+                and speaks three languages, Spanish, Portuguese and English. He
+                lived in more than four countries (Colombia, Ecuador, Brazil and
                 Canada), a lover of culture, design&art and knowledge.
               </p>
 
-              <ButtonApp>
-                READ MORE
-              </ButtonApp>
+              <ButtonApp> READ MORE </ButtonApp>
             </v-col>
           </v-row>
         </v-col>
@@ -70,107 +72,87 @@
 </template>
 
 <script>
-
 import PortfolioItem from "../components/PortfolioItem";
 import Preloader from "../components/preloader";
+import getProjects from "~/middleware/getProjects";
 
 export default {
-  components: {Preloader, PortfolioItem},
+  components: { Preloader, PortfolioItem },
   data: () => ({
     index: 0,
     words: ["CREATE", "CREATE", "AWESOME", "LOVE", "ROSE"],
-    isVisible: true
   }),
 
   async mounted() {
-    // USANDO SERVER
-    const request = await fetch('/api/user/login', {
-      method: 'POST',
-
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-
-      body: JSON.stringify({
-        email: 'christopher5@mail.com',
-        password: 'soy genial uwu',
-      })
-
-    });
-    const response = await request.json();
-    console.log(response);
-
     this.randomIndex();
-
-    setTimeout(this.visible, 500000000)
-
+    const projects = await getProjects();
+    console.log(projects);
   },
 
   methods: {
     randomIndex() {
-      this.index = Math.floor((Math.random() * (this.words.length - 1 + 1)) + 1);
-      console.log(this.index)
+      this.index = Math.floor(Math.random() * (this.words.length - 1 + 1) + 1);
+
+      setTimeout(() => {
+        this.randomIndex();
+      }, 3000);
     },
-    visible (){
-      this.isVisible = !this.isVisible
-    }
-  }
-}
+  },
+};
 </script>
 
 <style>
+.light {
+  font-size: 56px;
+  font-weight: 100;
+  letter-spacing: 5px;
+  line-height: normal;
+}
+
+.super-text {
+  color: #ef712f;
+}
+
+.super-santiago-text {
+  font-size: 250px;
+  text-align: center;
+  line-height: 250px;
+  letter-spacing: 10px;
+}
+
+.img-bg {
+  background: url("~assets/images/bg-orange.png") no-repeat;
+  background-size: 620px;
+  background-origin: content-box;
+  background-position-x: right;
+  background-position-y: center;
+}
+
+.connect-item {
+  font-size: 14px;
+  margin: 4px !important;
+  line-height: normal;
+}
+
+.title_careful {
+  text-align: center;
+  margin-top: 14vh;
+}
+
+.divider {
+  width: 90%;
+  display: flex;
+  margin-left: 5%;
+}
+
+@media screen and (max-width: 600px) {
   .light {
-    font-size: 56px;
-    font-weight: 100;
-    letter-spacing: 5px;
-    line-height: normal;
-  }
-
-  .super-text {
-    color: #ef712f;
-  }
-
-  .super-santiago-text {
-    font-size: 250px;
-    text-align: center;
-    line-height: 250px;
-    letter-spacing: 10px;
+    font-size: 2em;
   }
 
   .img-bg {
-    background: url("~assets/images/bg-orange.png") no-repeat;
-    background-size: 620px;
-    background-origin: content-box;
-    background-position-x: right;
-    background-position-y: center;
+    background-size: 420px;
+    background-position-x: initial;
   }
-
-  .connect-item {
-    font-size: 14px;
-    margin: 4px !important;
-    line-height: normal;
-  }
-
-  .title_careful{
-    text-align: center;
-    margin-top: 14vh;
-  }
-
-  .divider{
-    width: 90%;
-    display: flex;
-    margin-left: 5%;
-  }
-
-  @media screen and (max-width: 600px) {
-    .light {
-      font-size: 2em;
-    }
-
-    .img-bg {
-      background-size: 420px;
-      background-position-x: initial;
-    }
-  }
+}
 </style>

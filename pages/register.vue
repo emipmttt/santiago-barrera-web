@@ -7,7 +7,13 @@
 
       <div class="form">
         <v-form class="fom--body">
-          <p class="form__Title NeueMontreal-Bold">Login</p>
+          <p class="form__Title NeueMontreal-Bold">Register</p>
+          <v-text-field
+            :disabled="loading"
+            color="#FF8D3B"
+            label="Name"
+            v-model="name"
+          />
           <v-text-field
             :disabled="loading"
             color="#FF8D3B"
@@ -32,17 +38,12 @@
             dark
             elevation="4"
             block
-            @click="verifyUser()"
-            >Login
+            @click="createUser()"
+            >Register
           </v-btn>
 
-          <v-btn
-            @click="$router.push('/register')"
-            color="#FF8D3B"
-            dark
-            text
-            block
-            >Register
+          <v-btn @click="$router.push('/login')" color="#FF8D3B" dark text block
+            >Login
           </v-btn>
         </v-form>
 
@@ -77,6 +78,7 @@ export default {
     return {
       showPassword: false,
       password: "",
+      name: "",
       email: "",
       loading: false,
 
@@ -85,14 +87,15 @@ export default {
     };
   },
   methods: {
-    async verifyUser() {
+    async createUser() {
       this.loading = true;
       const user = {
+        name: this.name,
         email: this.email,
         password: this.password,
       };
 
-      const createUserQuery = (await axios.post("/api/user/login", user)).data;
+      const createUserQuery = (await axios.post("/api/user/create", user)).data;
       if (!createUserQuery.ok) {
         this.loading = false;
         this.message = createUserQuery.error;

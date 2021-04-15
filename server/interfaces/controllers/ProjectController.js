@@ -6,23 +6,21 @@ const DeleteProject = require("../../application/user_cases/projects/DeleteProje
 module.exports = {
   async createProject(req, res) {
     try {
-      const {
+      const { title, description, role, date, url } = req.body;
+
+      const project = await CreateProject(
         title,
         description,
         role,
         date,
         url,
-        content
-      } = req.body;
-
-      const project = await CreateProject(title, description, role, date, url, content);
+      );
 
       return res.json({
         ok: true,
         data: project,
-        message: 'Project created'
+        message: "Project created"
       });
-
     } catch (e) {
       console.log(e);
     }
@@ -36,7 +34,6 @@ module.exports = {
         ok: true,
         data: projects
       });
-
     } catch (e) {
       console.log(e);
     }
@@ -48,9 +45,8 @@ module.exports = {
 
       return res.json({
         ok: true,
-        message: 'Updated'
+        message: "Updated"
       });
-
     } catch (e) {
       console.log(e);
     }
@@ -62,10 +58,10 @@ module.exports = {
 
       return res.json({
         ok: true,
-        message: 'Deleted'
+        message: "Deleted"
       });
     } catch (e) {
       console.log(e);
     }
   }
-}
+};
