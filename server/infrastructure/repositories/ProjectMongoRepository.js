@@ -1,3 +1,5 @@
+import projects from "../../../pages/projects";
+
 const Project = require("../orm/mongoose/schemas/Project");
 
 module.exports = {
@@ -16,6 +18,10 @@ module.exports = {
 
   async deleteById(id) {
     return Project.findOneAndDelete({ id });
+  },
+
+  async getProjectById(id) {
+    return Project.findById(id);
   }
 }
 

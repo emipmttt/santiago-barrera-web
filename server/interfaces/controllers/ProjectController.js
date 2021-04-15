@@ -2,6 +2,7 @@ const CreateProject = require("../../application/user_cases/projects/CreateProje
 const GetAllProjects = require("../../application/user_cases/projects/GetAllProjects");
 const UpdateProject = require("../../application/user_cases/projects/UpdateProject");
 const DeleteProject = require("../../application/user_cases/projects/DeleteProject");
+const GetOneProject = require("../../application/user_cases/projects/GetOneProject");
 
 module.exports = {
   async createProject(req, res) {
@@ -60,6 +61,18 @@ module.exports = {
         ok: true,
         message: "Deleted"
       });
+    } catch (e) {
+      console.log(e);
+    }
+  },
+
+  async getProjectById(req, res) {
+    try {
+      const project = await GetOneProject(req.params.id);
+      return res.json({
+        ok: true,
+        data: project
+      })
     } catch (e) {
       console.log(e);
     }
