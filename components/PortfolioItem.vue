@@ -15,9 +15,11 @@
         </p>
 
         <p>
-          <v-icon @click="$router.push('/project')">
-            mdi-plus-circle-outline
-          </v-icon>
+          <nuxt-link :to="`/project/${this.project._id}`" class="PortfolioItem__container--data--link">
+            <v-icon class="PortfolioItem__container--data--link">
+              mdi-plus-circle-outline
+            </v-icon>
+          </nuxt-link>
         </p>
       </div>
     </div>
@@ -205,5 +207,10 @@ export default {
   .PortfolioItem__container--data--about--text {
     font-size: 0.7rem;
   }
+
+  .PortfolioItem__container--data--link{
+    text-decoration-line: none;
+  }
+
 }
 </style>

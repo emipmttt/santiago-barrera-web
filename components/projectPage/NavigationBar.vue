@@ -1,6 +1,6 @@
 <template>
   <div class="navigateBar">
-    <v-btn text class="navigateBar__Back">
+    <v-btn text class="navigateBar__Back" @click="$router.push('/')">
       <img src="~assets/images/BACK.svg" class="navigateBar__Back--img"/>
       <p class="navigateBar__Back--txt NueMontreal">BACK</p>
     </v-btn>
@@ -21,7 +21,7 @@ export default {
   name: "NavigationBar",
   props:{
     title: String,
-    index: String
+    index: Number
   }
 }
 </script>
