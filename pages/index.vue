@@ -42,6 +42,13 @@
         :project="project"
       />
     </template>
+    <div class="text-center">
+      <nuxt-link to="/projects">
+        <ButtonApp style="display: inline-block">
+          SEE MORE OF MY WORK
+        </ButtonApp>
+      </nuxt-link>
+    </div>
 
     <!-- 
 
