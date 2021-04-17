@@ -2,9 +2,9 @@ const environment = () => {
 
   const environment = {
     database: {
-      user: 'CHRISTOPHER_WEBIN',
-      password: 'MONGO_PRUEBAS',
-      url: 'mongodb+srv://CHRISTOPHER_WEBIN:MONGO_PRUEBAS@cluster0.dqukd.mongodb.net/app?retryWrites=true&w=majority',
+      user: 'sb01',
+      password: 'Artiswisdom',
+      url: 'mongodb+srv://sb01:Artiswisdom@sb01.yh0n5.mongodb.net/SB01?retryWrites=true&w=majority',
     },
 
     jsonwebtoken: {
