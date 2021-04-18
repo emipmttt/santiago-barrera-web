@@ -1,5 +1,5 @@
 spec:
-  name: santiago_barrera
+  name: santiagobarrera
   services:
     - build_command: npm run build
       environment_slug: node-js
