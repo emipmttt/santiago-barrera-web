@@ -2,6 +2,10 @@ import colors from "vuetify/es5/util/colors";
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+
+  server: {
+    port: 80 // default: 3000
+  },
   head: {
     titleTemplate: "%s - Santiago Barrera",
     title: "Santiago Barrera",
