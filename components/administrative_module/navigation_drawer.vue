@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar-nav-icon @click="activeDrawer = !activeDrawer"/>
+    <v-app-bar-nav-icon @click="activeDrawer = !activeDrawer" />
 
     <v-navigation-drawer
       app
@@ -12,7 +12,7 @@
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="bar__title">
-            <img :src="require('~/assets/images/SantiagoBarreraLogoWhite.svg')" />
+            <img :src="require('~/assets/images/SantiagoBarreraLogo.png')" />
           </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
@@ -48,11 +48,11 @@ export default {
       this.$router.push("/");
     },
   },
-  data(){
-    return{
-      activeDrawer:true
-    }
-  }
+  data() {
+    return {
+      activeDrawer: true,
+    };
+  },
 };
 </script>
 

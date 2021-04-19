@@ -77,8 +77,9 @@
                 lived in more than four countries (Colombia, Ecuador, Brazil and
                 Canada), a lover of culture, design&art and knowledge.
               </p>
-
-              <ButtonApp> READ MORE </ButtonApp>
+              <nuxt-link to="/projects">
+                <ButtonApp> READ MORE </ButtonApp></nuxt-link
+              >
             </v-col>
           </v-row>
         </v-col>
@@ -96,7 +97,31 @@ export default {
   components: { Preloader, PortfolioItem },
   data: () => ({
     index: 0,
-    words: ["CREATE", "CREATE", "AWESOME", "LOVE", "ROSE"],
+    words: [
+      "I ALSO LOVE COFFEE",
+      "CATS",
+      "IMAGINE",
+      "TYPOGRAPHY",
+      "DRAW",
+      "DREAM",
+      "LEARN",
+      "TEACH",
+      "THINK",
+      "MANGO",
+      "DISCOVER",
+      "DEVELOP",
+      "PAINTING",
+      "JOKES",
+      "SUSHI",
+      "CULTURE",
+      "CAIPIRINHA",
+      "BEER",
+      "MUSEUMS",
+      "TRAVEL",
+      "PHOTOGRAPHY",
+      "MEET PEOPLE",
+      "STRAWBERRIES",
+    ],
     projects: [],
   }),
 

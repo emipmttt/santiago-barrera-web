@@ -4,7 +4,7 @@
       <v-row class="flex-column-reverse flex-md-row">
         <v-col class="col-md-4 col__image_background">
           <p class="Hatton-Light text--vertical">
-            SANTIAGO <br>
+            SANTIAGO <br />
             BARRERA
           </p>
         </v-col>
@@ -13,61 +13,42 @@
           <v-container>
             <v-row>
               <v-col class="d-flex justify-space-between align-center">
-                <h3 class="Hatton-Light title__font">
-                  ABOUT ME
-                </h3>
-
-                <p class="text__style white--text Hatton text-center">
-                  Santiago <br>
-                  barrera
-                </p>
+                <h3 class="Hatton-Light title__font">ABOUT ME</h3>
               </v-col>
             </v-row>
 
             <v-row justify="center" class="mt-10">
               <v-col class="col-md-8">
                 <h2 class="white--text text__title">
-                  Graphic <br>
+                  Graphic <br />
                   Designer
                 </h2>
 
-                <h2 class="white--text mt-4">
-                  (2018 - present)
-                </h2>
+                <h2 class="white--text mt-4">(2018 - present)</h2>
 
-                <h2 class="white--text mt-10">
-                  Profile
-                </h2>
+                <h2 class="white--text mt-10">Profile</h2>
 
                 <p class="white--text NueMontreal mt-4">
-                  Santiago is a student passionate about design and art. Currently in his third year of Graphic
-                  Design at George Brown College. In his opinion, the most exciting and essential part is always
-                  to learn new skills that can be meticulously executed in designs. The use of colour and contrast
-                  are his favourite subjects. Santiago is originally from Colombia and speaks three languages,
-                  Spanish, Portuguese and English and in the process of learning French! I lived in more than
-                  four countries (Colombia, Ecuador, Brazil and Canada), a culture, design&art and knowledge lover.
+                  Santiago is a student passionate about design and art.
+                  Currently in his third year of Graphic Design at George Brown
+                  College. In his opinion, the most exciting and essential part
+                  is always to learn new skills that can be meticulously
+                  executed in designs. The use of colour and contrast are his
+                  favourite subjects. Santiago is originally from Colombia and
+                  speaks three languages, Spanish, Portuguese and English and in
+                  the process of learning French! I lived in more than four
+                  countries (Colombia, Ecuador, Brazil and Canada), a culture,
+                  design&art and knowledge lover.
                 </p>
 
-                <h2 class="white--text mt-10 mb-4">
-                  Contact
-                </h2>
+                <h2 class="white--text mt-10 mb-4">Contact</h2>
 
-                <p class="white--text NueMontreal ma-0">
-                  Linkedin
-                </p>
-                <p class="white--text NueMontreal ma-0">
-                  Behance
-                </p>
-                <p class="white--text NueMontreal ma-0">
-                  Instagram
-                </p>
-                <p class="white--text NueMontreal ma-0">
-                  Email
-                </p>
+                <p class="white--text NueMontreal ma-0">Linkedin</p>
+                <p class="white--text NueMontreal ma-0">Behance</p>
+                <p class="white--text NueMontreal ma-0">Instagram</p>
+                <p class="white--text NueMontreal ma-0">Email</p>
 
-                <h2 class="white--text mt-10">
-                  Job Experience
-                </h2>
+                <h2 class="white--text mt-10">Job Experience</h2>
 
                 <p class="white--text NueMontreal mt-4">
                   2019 Present / Graphic Designer Freelance +15 Project
@@ -77,14 +58,9 @@
                   2020 - Present / Designer at Mentores Digital
                 </p>
 
-                <h2 class="white--text mt-10">
-                  Resume
-                </h2>
+                <h2 class="white--text mt-10">Resume</h2>
 
-                <p class="white--text NueMontreal mt-4">
-                  Download it
-                </p>
-
+                <p class="white--text NueMontreal mt-4">Download it</p>
               </v-col>
             </v-row>
           </v-container>
@@ -96,15 +72,14 @@
 
 <script>
 export default {
-  name: "about"
-}
+  name: "about",
+};
 </script>
 
 
 <style scoped>
-
 .body--background-primary {
-  background-color: #FF6700;
+  background-color: #ff6700;
 }
 
 .text--vertical {

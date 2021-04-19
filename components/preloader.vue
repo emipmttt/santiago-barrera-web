@@ -2,7 +2,7 @@
   <div class="preloader" id="preloader_backgroundAnimation">
     <div class="preloader__container">
       <img
-        :src="require('~/assets/images/SantiagoBarreraLogo.svg')"
+        :src="require('~/assets/images/SantiagoBarreraLogo.png')"
         id="preloader__container--animatedText"
       />
     </div>
