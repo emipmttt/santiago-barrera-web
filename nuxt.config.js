@@ -4,7 +4,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
 
   server: {
-    port: 80 // default: 3000
+    port: 3000 // default: 3000
   },
   head: {
     titleTemplate: "%s - Santiago Barrera",
