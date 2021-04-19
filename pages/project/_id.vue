@@ -1,10 +1,6 @@
 <template>
   <div>
-
-    <navigation-bar
-      :title="project.title"
-      :index="1"
-    />
+    <navigation-bar :title="project.title" :index="1" />
 
     <data-project
       :name-project="project.title"
@@ -12,17 +8,26 @@
       :date="new Date(project.date).toLocaleDateString()"
     />
 
-    <img
-      v-if="project.content"
-      :src="project.content[0].content"
-      class="project__img"
-    />
+    <v-container>
+      <section
+        v-if="project.content"
+        style="display: flex; flex-direction: column"
+      >
+        <template v-for="item in project.content">
+          <img
+            :key="item._id"
+            v-if="item.type == 'IMAGE'"
+            :src="item.content"
+            width="100%"
+          />
+          <p :key="item._id" v-else>
+            {{ item.content }}
+          </p>
+        </template>
+      </section>
+    </v-container>
 
-    <div class="project__txt NueMontreal">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cumque mollitia nemo obcaecati optio quae quasi quibusdam quis tempora tempore? Accusamus architecto asperiores consectetur ex, incidunt officia pariatur saepe ullam.
-    </div>
-
-    <!-- <marquee-project :images="images" /> -->
+    <!--  <marquee-project :images="images" /> -->
   </div>
 </template>
 
@@ -37,16 +42,18 @@ export default {
   components: { MarqueeProject, DataProject: DataProject, NavigationBar },
   data() {
     return {
-      project:{},
-      nameP: ""
-    }
+      project: {},
+      nameP: "",
+    };
   },
   async mounted() {
-    var request = (await axios.get("/api/projects/details/" + this.$route.params.id)).data
-    this.project = request.data
+    var request = (
+      await axios.get("/api/projects/details/" + this.$route.params.id)
+    ).data;
+    this.project = request.data;
 
-    console.log(this.project)
-  }
+    console.log(this.project);
+  },
 };
 </script>
 

@@ -5,7 +5,6 @@ const contentRepository = require("../../../infrastructure/repositories/ContentM
 const puppeteer = require("puppeteer");
 
 module.exports = async (title, description, role, date, url) => {
-
   browser = await puppeteer.launch({
     ignoreHTTPSErrors: true,
     ignoreDefaultArgs: ["--disable-extensions"]
@@ -62,14 +61,18 @@ module.exports = async (title, description, role, date, url) => {
   });
 
   const contentObjectIds = [];
-  const project =await projectRepository.store(new projectEntity(null, title, description, role, date, url, []));
+  const project = await projectRepository.store(
+    new projectEntity(null, title, description, role, date, url, [])
+  );
 
   for (let item of content) {
-    const contentDB = await contentRepository.store(new contentEntity(null, item.type, item.content, project._id));
+    const contentDB = await contentRepository.store(
+      new contentEntity(null, item.type, item.content, project._id)
+    );
     contentObjectIds.push(contentDB._id);
   }
 
-  return projectRepository.store(
-    new projectEntity(null, title, description, role, date, url, contentObjectIds)
-  );
-};
+  return projectRepository.updateById(project._id, {
+    content: contentObjectIds
+  });
+}

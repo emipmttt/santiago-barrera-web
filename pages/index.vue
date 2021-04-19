@@ -127,7 +127,7 @@ export default {
 
   async mounted() {
     this.randomIndex();
-    const projects = await getProjects();
+    const projects = await getProjects(4);
     this.projects = projects;
   },
 

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="d-flex justify-space-between align-center NueMontreal">
-      <div><h1>Proyectos</h1></div>
+      <div><h1>Projects</h1></div>
       <Create />
     </div>
     <List />

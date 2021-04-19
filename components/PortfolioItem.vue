@@ -15,7 +15,10 @@
         </p>
 
         <p>
-          <nuxt-link :to="`/project/${this.project._id}`" class="PortfolioItem__container--data--link">
+          <nuxt-link
+            :to="`/project/${this.project._id}`"
+            class="PortfolioItem__container--data--link"
+          >
             <v-icon class="PortfolioItem__container--data--link">
               mdi-plus-circle-outline
             </v-icon>
@@ -66,10 +69,13 @@ export default {
   props: ["index", "project"],
   methods: {
     findFirstImage(content) {
-      console.log(content);
-      return content.find((element) => {
-        return element.type === "IMAGE";
-      }).content;
+      const element = content.find((element) => {
+        return element.type == "IMAGE";
+      });
+
+      if (element) {
+        return element.content;
+      }
     },
   },
 };
@@ -208,9 +214,8 @@ export default {
     font-size: 0.7rem;
   }
 
-  .PortfolioItem__container--data--link{
+  .PortfolioItem__container--data--link {
     text-decoration-line: none;
   }
-
 }
 </style>

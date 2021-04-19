@@ -39,13 +39,18 @@ export default {
   methods: {
     async getProjects_() {
       const projects = await getProjects();
+      this.projects = [];
       this.projects = projects;
     },
 
     findFirstImage(content) {
-      return content.find((element) => {
+      const element = content.find((element) => {
         return element.type == "IMAGE";
-      }).content;
+      });
+
+      if (element) {
+        return element.content;
+      }
     },
 
     async deleteProject(id) {

@@ -1,5 +1,7 @@
 import axios from "axios";
-export default async () => {
+export default async limit => {
   const projects = await axios.get("/api/projects");
-  return projects.data.data;
+
+  if (limit > 0) return projects.data.data.splice(0, limit);
+  else return projects.data.data;
 };

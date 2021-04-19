@@ -11,7 +11,7 @@
 
     <v-spacer class="d-none d-md-flex" />
     <v-toolbar-items class="d-none d-md-flex NueMontreal">
-      <v-btn to="/" text plain :ripple="false"> WORK </v-btn>
+      <v-btn to="/projects" text plain :ripple="false"> WORK </v-btn>
       <v-btn to="/about" text plain :ripple="false"> ABOUT </v-btn>
       <v-btn to="/contact" text plain :ripple="false"> CONTACT </v-btn>
 
@@ -29,7 +29,7 @@
 
     <v-spacer class="d-none d-md-flex" />
 
-    <v-btn text class="button_app_style" plain :ripple="false">
+    <v-btn to="/" text class="button_app_style" plain :ripple="false">
       <img
         :src="require('@/assets/images/SantiagoBarreraLogo.png')"
         width="100  "

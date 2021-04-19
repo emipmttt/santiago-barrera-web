@@ -2,7 +2,7 @@ const Project = require("../orm/mongoose/schemas/Project");
 
 module.exports = {
   async store(projectModel) {
-    const project = new Project(projectModel)
+    const project = new Project(projectModel);
     return project.save();
   },
 
@@ -11,17 +11,14 @@ module.exports = {
   },
 
   async updateById(id, entity) {
-    return Project.findOneAndUpdate({ id }, entity);
+    return Project.findByIdAndUpdate(id, entity);
   },
 
   async deleteById(id) {
-    return Project.findOneAndDelete({ id });
+    return Project.findByIdAndDelete(id);
   },
 
   async getProjectById(id) {
     return Project.findById(id).populate("content");
   }
-
-
-}
-
+};
