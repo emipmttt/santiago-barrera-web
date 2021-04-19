@@ -76,22 +76,30 @@ export default {
   methods: {
     async create() {
       this.loading = true;
-      const project = {
-        title: this.title,
-        description: this.description,
-        role: this.role,
-        date: Number(new Date(this.date).valueOf()),
-        url: this.url,
-      };
+      try {
+        const project = {
+          title: this.title,
+          description: this.description,
+          role: this.role,
+          date: Number(new Date(this.date).valueOf()),
+          url: this.url,
+        };
 
-      const createUserQuery = (
-        await axios.post("/api/projects/create", project)
-      ).data;
-      if (!createUserQuery.ok) {
+        const createUserQuery = (
+          await axios.post("/api/projects/create", project)
+        ).data;
+        if (!createUserQuery.ok) {
+          this.loading = false;
+          this.message = createUserQuery.error;
+          this.messageModal = true;
+          return;
+        } else {
+          this.loading = false;
+          this.messageModal = false;
+        }
+      } catch (error) {
         this.loading = false;
-        this.message = createUserQuery.error;
-        this.messageModal = true;
-        return;
+        this.messageModal = false;
       }
 
       location.reload();
