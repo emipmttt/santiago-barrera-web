@@ -7,7 +7,7 @@ export default {
     port: 3000 // default: 3000
   },
   head: {
-    titleTemplate: "%s - Santiago Barrera",
+    titleTemplate: "%s | Editorial & Brand Designer",
     title: "Santiago Barrera",
     htmlAttrs: {
       lang: "en"

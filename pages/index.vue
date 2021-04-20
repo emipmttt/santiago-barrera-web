@@ -22,9 +22,24 @@
             <p class="connect-item NeueMontreal-Bold super-text mb-4">
               CONNECT:
             </p>
-            <p class="connect-item NueMontreal">BEHANCE</p>
-            <p class="connect-item NueMontreal">INSTAGRAM</p>
-            <p class="connect-item NueMontreal">LINKEDIN</p>
+            <a
+              href="https://www.behance.net/santiagobarrera"
+              target="_blank"
+              class="connect-item NueMontreal"
+              >BEHANCE</a
+            >
+            <a
+              href="https://www.instagram.com/santiagobarrera.design/"
+              target="_blank"
+              class="connect-item NueMontreal"
+              >INSTAGRAM</a
+            >
+            <a
+              href="https://www.linkedin.com/in/santiago-barrera-design/"
+              target="_blank"
+              class="connect-item NueMontreal"
+              >LINKEDIN</a
+            >
           </div>
         </v-col>
       </v-row>
@@ -77,7 +92,7 @@
                 lived in more than four countries (Colombia, Ecuador, Brazil and
                 Canada), a lover of culture, design&art and knowledge.
               </p>
-              <nuxt-link to="/projects">
+              <nuxt-link to="/about">
                 <ButtonApp> READ MORE </ButtonApp></nuxt-link
               >
             </v-col>
@@ -174,6 +189,8 @@ export default {
   font-size: 14px;
   margin: 4px !important;
   line-height: normal;
+  display: block;
+  color: #333 !important;
 }
 
 .title_careful {
