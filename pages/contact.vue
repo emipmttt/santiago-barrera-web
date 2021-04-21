@@ -27,26 +27,34 @@
     </div>
 
     <v-container class="ContactLinks NueMontreal">
-      <v-row>
-        <v-col>LINKEDIN</v-col>
-        <v-col class="ContactLinks__Name">
-          <b>SANTIAGO-BARRERA-DESIGN</b>
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col>BEHANCE</v-col>
-        <v-col class="ContactLinks__Name"> <b>SANTIAGOBARRERA</b> </v-col>
-      </v-row>
-      <v-row>
-        <v-col>EMAIL</v-col>
-        <v-col class="ContactLinks__Name ContactLinks__Name--mail">
-          <b>SANTIAGOBARRERA.DESIGN@GMAIL.COM</b>
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col>INSTAGRAM</v-col>
-        <v-col class="ContactLinks__Name"><b>SANTIAGOBARRERA.DESIGN</b></v-col>
-      </v-row>
+      <a href="https://www.linkedin.com/in/santiago-barrera-design/">
+        <v-row class="ContactLinks--container">
+          <v-col>LINKEDIN</v-col>
+          <v-col class="ContactLinks__Name">
+            <b>SANTIAGO-BARRERA-DESIGN</b>
+          </v-col>
+        </v-row>
+      </a>
+      <a href="https://www.behance.net/santiagobarrera">
+        <v-row class="ContactLinks--container">
+          <v-col>BEHANCE</v-col>
+          <v-col class="ContactLinks__Name"> <b>SANTIAGOBARRERA</b> </v-col>
+        </v-row>
+      </a>
+      <a href="mailto:santiagobarrera.design@gmail.com">
+        <v-row class="ContactLinks--container">
+          <v-col>EMAIL</v-col>
+          <v-col class="ContactLinks__Name ContactLinks__Name--mail">
+            <b>SANTIAGOBARRERA.DESIGN@GMAIL.COM</b>
+          </v-col>
+        </v-row>
+      </a>
+      <a  href="https://www.instagram.com/santiagobarrera.design/">
+        <v-row class="ContactLinks--container">
+          <v-col>INSTAGRAM</v-col>
+          <v-col class="ContactLinks__Name"><b>SANTIAGOBARRERA.DESIGN</b></v-col>
+        </v-row>
+      </a>
     </v-container>
   </div>
 </template>
@@ -111,6 +119,10 @@ export default {
   width: 80%;
   margin-top: 6rem;
   margin-bottom: 6rem;
+}
+
+.ContactLinks--container{
+  color: #333333;
 }
 
 @media screen and (max-width: 768px) {

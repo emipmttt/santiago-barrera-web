@@ -43,10 +43,10 @@
 
                 <h2 class="white--text mt-10 mb-4">Contact</h2>
 
-                <p class="white--text NueMontreal ma-0">Linkedin</p>
-                <p class="white--text NueMontreal ma-0">Behance</p>
-                <p class="white--text NueMontreal ma-0">Instagram</p>
-                <p class="white--text NueMontreal ma-0">Email</p>
+                <a class="white--text NueMontreal ma-0" href="https://www.linkedin.com/in/santiago-barrera-design/">Linkedin</a><br/>
+                <a class="white--text NueMontreal ma-0" href="https://www.behance.net/santiagobarrera">Behance</a><br/>
+                <a class="white--text NueMontreal ma-0" href="https://www.instagram.com/santiagobarrera.design/">Instagram</a><br/>
+                <a class="white--text NueMontreal ma-0" href="mailto:santiagobarrera.design@gmail.com">Email</a>
 
                 <h2 class="white--text mt-10">Job Experience</h2>
 

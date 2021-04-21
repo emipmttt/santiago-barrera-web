@@ -6,9 +6,14 @@
       </p>
 
       <div>
-        <p class="Hatton PortfolioItem__container--data--title">
-          {{ project.title }}
-        </p>
+        <nuxt-link
+          :to="`/project/${this.project._id}`"
+          class="PortfolioItem__container--data--link"
+        >
+          <p class="Hatton PortfolioItem__container--data--title">
+            {{ project.title }}
+          </p>
+        </nuxt-link>
 
         <p class="NueMontreal PortfolioItem__container--data--subTitle">
           {{ project.description }}
@@ -53,11 +58,16 @@
       </div>
 
       <div class="PortfolioItem__container--img--top">
-        <img
-          v-if="project.content[0] !== undefined"
-          :src="project.content[0].content"
-          class="PortfolioItem__container--img"
-        />
+        <nuxt-link
+          :to="`/project/${this.project._id}`"
+          class="PortfolioItem__container--data--link"
+        >
+          <img
+            v-if="project.content[0] !== undefined"
+            :src="project.content[0].content"
+            class="PortfolioItem__container--img"
+          />
+        </nuxt-link>
       </div>
     </div>
   </div>
@@ -112,6 +122,7 @@ export default {
   margin-left: 0;
   font-size: 1.5rem;
   margin-bottom: 0;
+  color: #333333;
 }
 
 .PortfolioItem__container--data--subTitle {
@@ -216,6 +227,7 @@ export default {
 
   .PortfolioItem__container--data--link {
     text-decoration-line: none;
+    color: #333333;
   }
 }
 </style>
