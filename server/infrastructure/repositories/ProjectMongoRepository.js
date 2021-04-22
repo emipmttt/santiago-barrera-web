@@ -11,7 +11,7 @@ module.exports = {
   },
 
   async updateById(id, entity) {
-    return Project.findOneAndUpdate({ id }, entity);
+    return Project.updateOne({ id }, entity);
   },
 
   async deleteById(id) {
