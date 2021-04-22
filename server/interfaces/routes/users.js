@@ -11,12 +11,11 @@ const {
 const { Router } = require("express");
 const router = Router();
 
+router.get('/getAllUsers', getAllUsers);
 router.post('/create', registerUser);
 router.post('/login', loginUser);
 router.put('/update/:id', updateUser);
 router.delete('/delete/:id', deleteUser);
-
-router.get('/getAllUsers', getAllUsers);
 
 router.post("/reset", sendEmailRecover);
 router.post('/change-password', changePassword);

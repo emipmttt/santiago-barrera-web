@@ -17,7 +17,9 @@ module.exports = {
   },
 
   async updateById(id, userEntity) {
-    return User.findOneAndUpdate({ id }, userEntity);
+    return User.findOneAndUpdate({
+      _id: id
+    } , userEntity);
   },
 
   async deleteById(id) {

@@ -98,6 +98,9 @@ module.exports = {
 
   async updateUser(req, res) {
     try {
+
+      console.log(req.params.id)
+      console.log(req.body)
       const id = req.params.id;
       await updateUserById(id, req.body);
 
