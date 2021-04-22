@@ -12,6 +12,10 @@ module.exports = {
     });
   },
 
+  async findAll() {
+    return User.find().populate("content");
+  },
+
   async updateById(id, userEntity) {
     return User.findOneAndUpdate({ id }, userEntity);
   },

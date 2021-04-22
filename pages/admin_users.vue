@@ -6,7 +6,6 @@
         <v-btn to="/" elevation="1">
           HOME
         </v-btn>
-        <Create />
       </div>
     </div>
     <List />
@@ -16,9 +15,13 @@
 <script>
 import Create from "~/components/admin_projects/Create.vue";
 import List from "~/components/admin_projects/List.vue";
+import axios from "axios";
 export default {
   layout: "admin",
   name: "administrative_module",
   components: { Create, List },
+  async mounted() {
+    console.log(await axios.get('api/user/getAllUsers'))
+  }
 };
 </script>
