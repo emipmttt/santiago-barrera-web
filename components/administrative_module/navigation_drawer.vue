@@ -18,14 +18,27 @@
       </v-list-item>
 
       <v-list dense nav>
-        <v-list-item link>
-          <v-list-item-icon>
-            <v-icon> mdi-store </v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title>Projects</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+        <nuxt-link to="/admin_projects">
+          <v-list-item link>
+            <v-list-item-icon>
+              <v-icon> mdi-store </v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title>Projects</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </nuxt-link>
+
+        <nuxt-link to="/admin_users">
+          <v-list-item link>
+            <v-list-item-icon>
+              <v-icon> mdi-account-multiple </v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title>Users</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </nuxt-link>
 
         <v-list-item @click="logout">
           <v-list-item-icon>
