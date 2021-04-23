@@ -81,9 +81,14 @@
                   Resume
                 </h2>
 
-                <p class="white--text NueMontreal mt-4">
+                <a
+                  target="_blank"
+                  class="white--text NueMontreal mt-4 text-decoration-none"
+                  href="~assets/pdf/resume.pdf"
+                  download
+                >
                   Download it
-                </p>
+                </a>
 
               </v-col>
             </v-row>
