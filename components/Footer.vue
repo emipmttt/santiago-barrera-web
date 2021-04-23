@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="footer__row">
-      <h1 class="Hatton-Light">
+      <h1 class="Hatton-Light light">
         LET'S CREATE SOMETHING <br />
         WITH VALUE TOGETHER
       </h1>
@@ -60,6 +60,13 @@ export default {};
   &__row {
     flex: 1;
   }
+}
+
+.light {
+  font-size: 35px;
+  font-weight: 10;
+  letter-spacing: 2px;
+  line-height: normal;
 }
 
 @media screen and (max-width: 600px) {
