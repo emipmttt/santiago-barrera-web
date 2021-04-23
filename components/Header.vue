@@ -7,7 +7,7 @@
   >
     <!-- <v-app-bar-nav-icon class="d-xs-flex d-md-none" /> -->
 
-    <preloader v-if="false" />
+    <preloader v-if="isVisible" />
 
     <v-spacer class="d-none d-md-flex" />
     <v-toolbar-items class="d-none d-md-flex NueMontreal">
