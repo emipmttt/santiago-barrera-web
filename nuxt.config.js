@@ -2,8 +2,17 @@ import colors from "vuetify/es5/util/colors";
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+
+  server: {
+    port: 3000 // default: 3000
+  },
+
+  env: {
+    SHOW_ANIMATION: process.env.SHOW_ANIMATION
+  },
+
   head: {
-    titleTemplate: "%s - Santiago Barrera",
+    titleTemplate: "%s | Editorial & Brand Designer",
     title: "Santiago Barrera",
     htmlAttrs: {
       lang: "en"
@@ -17,7 +26,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["@/assets/css/fonts.css"],
+  css: ["@/assets/css/style.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],

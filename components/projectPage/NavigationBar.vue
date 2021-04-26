@@ -1,8 +1,8 @@
 <template>
   <div class="navigateBar">
     <v-btn text class="navigateBar__Back" @click="$router.push('/')">
-      <img src="~assets/images/BACK.svg" class="navigateBar__Back--img"/>
-      <p class="navigateBar__Back--txt NueMontreal">BACK</p>
+      <!-- <img src="~assets/images/BACK.svg" class="navigateBar__Back--img"/>
+      <p class="navigateBar__Back--txt NueMontreal">BACK</p> -->
     </v-btn>
 
     <div  class="navigateBar__title Hatton-Light">
@@ -11,7 +11,7 @@
     </div>
 
     <div class="navigateBar__name Hatton">
-      Santiago<br/>Barrera
+      <!-- Santiago<br/>Barrera -->
     </div>
   </div>
 </template>

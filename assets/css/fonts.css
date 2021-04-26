@@ -17,6 +17,15 @@
 }
 
 @font-face {
+  font-family: 'Hatton-Ultralight';
+  src: url("assets/Fonts/Hatton/Hatton-Ultralight.ttf");
+}
+
+.Hatton-Ultralight{
+  font-family: 'Hatton-Ultralight';
+}
+
+@font-face {
   font-family: 'Hatton-Bold';
   src: url("assets/Fonts/Hatton/Hatton-Bold.ttf");
 }

@@ -4,12 +4,14 @@ const {
   updateUser,
   deleteUser,
   sendEmailRecover,
+  getAllUsers,
   changePassword
 } = require("../controllers/UserController.js");
 
 const { Router } = require("express");
 const router = Router();
 
+router.get('/getAllUsers', getAllUsers);
 router.post('/create', registerUser);
 router.post('/login', loginUser);
 router.put('/update/:id', updateUser);

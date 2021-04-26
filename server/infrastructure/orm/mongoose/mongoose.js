@@ -4,7 +4,7 @@ const environment = require('../../config/environment');
 mongoose.connect(environment.database.url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useFindAndModify: true
+  useFindAndModify: false
 });
 
 mongoose.connection.on('open', () => {

@@ -9,13 +9,7 @@ module.exports = {
     try {
       const { title, description, role, date, url } = req.body;
 
-      const project = await CreateProject(
-        title,
-        description,
-        role,
-        date,
-        url,
-      );
+      const project = await CreateProject(title, description, role, date, url);
 
       return res.json({
         ok: true,
@@ -59,7 +53,7 @@ module.exports = {
 
       return res.json({
         ok: true,
-        message: "Deleted"
+        message: req.params.id + " deleted"
       });
     } catch (e) {
       console.log(e);
@@ -72,7 +66,7 @@ module.exports = {
       return res.json({
         ok: true,
         data: project
-      })
+      });
     } catch (e) {
       console.log(e);
     }

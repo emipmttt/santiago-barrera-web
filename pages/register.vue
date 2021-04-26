@@ -2,7 +2,7 @@
   <div class="container NueMontreal">
     <div class="login">
       <div class="login__left">
-        <img :src="require('~/assets/images/SantiagoBarreraLogoWhite.svg')" />
+        <img :src="require('~/assets/images/SantiagoBarreraLogo.png')" />
       </div>
 
       <div class="form">
@@ -162,6 +162,10 @@ export default {
   font-size: 300%;
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
+}
+
+.login__left img {
+  width: 200px;
 }
 
 .fom--body {

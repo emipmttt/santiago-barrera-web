@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="footer__row">
-      <h1 class="Hatton-Light">
+      <h1 class="Hatton-Light light">
         LET'S CREATE SOMETHING <br />
         WITH VALUE TOGETHER
       </h1>
@@ -9,17 +9,21 @@
       <div class="nav">
         <div style="flex: 1">
           <h3>CONNECT</h3>
-          <a href="">BEHANCE</a>
+          <a href="https://www.behance.net/santiagobarrera">BEHANCE</a>
           <br />
-          <a href="">INSTAGRAM</a>
+          <a href="https://www.instagram.com/santiagobarrera.design/"
+            >INSTAGRAM</a
+          >
           <br />
-          <a href="">LINKEDIN</a>
+          <a href="https://www.linkedin.com/in/santiago-barrera-design/"
+            >LINKEDIN</a
+          >
         </div>
         <div style="flex: 1">
-          <h3>
-            Santiago <br />
-            Barrera
-          </h3>
+          <img
+            :src="require('@/assets/images/SantiagoBarreraLogo.png')"
+            width="200"
+          />
         </div>
       </div>
     </div>
@@ -29,10 +33,11 @@
       </a>
 
       <nav class="nav mt-9">
-        <a href="">WORK</a>
-        <a href="">ABOUT</a>
-        <a href="">CONTACT</a>
-        <a href="">JOURNAL</a>
+        <nuxt-link to="/projects">WORK</nuxt-link>
+        <nuxt-link to="/about">ABOUT</nuxt-link>
+        <nuxt-link to="/contact">CONTACT</nuxt-link>
+        <nuxt-link to="" disabled>JOURNAL</nuxt-link>
+        <nuxt-link to="" disabled>SHOP</nuxt-link>
       </nav>
       <!-- WORK ABOUT CONTACT JOURNAL -->
     </div>
@@ -55,6 +60,13 @@ export default {};
   &__row {
     flex: 1;
   }
+}
+
+.light {
+  font-size: 35px;
+  font-weight: 10;
+  letter-spacing: 2px;
+  line-height: normal;
 }
 
 @media screen and (max-width: 600px) {
