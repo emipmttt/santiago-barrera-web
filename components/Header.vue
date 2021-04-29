@@ -6,8 +6,9 @@
     elevate-on-scroll
   >
     <!-- <v-app-bar-nav-icon class="d-xs-flex d-md-none" /> -->
-
-    <preloader v-if="isVisible && showAnimation" />
+    <template v-if="showAnimation">
+      <preloader v-if="isVisible" />
+    </template>
 
     <v-spacer class="d-none d-md-flex" />
     <v-toolbar-items class="d-none d-md-flex NueMontreal">
