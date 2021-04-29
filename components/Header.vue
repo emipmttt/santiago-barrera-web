@@ -65,7 +65,7 @@ export default {
 
   methods: {
     visible() {
-      this.isVisible = !this.isVisible;
+      this.isVisible = false;
     },
   },
 };
