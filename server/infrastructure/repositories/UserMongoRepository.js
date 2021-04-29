@@ -2,7 +2,7 @@ const User = require("../orm/mongoose/schemas/User");
 
 module.exports = {
   async store(userModel) {
-    const user = new User(userModel)
+    const user = new User(userModel);
     return user.save();
   },
 
@@ -17,13 +17,15 @@ module.exports = {
   },
 
   async updateById(id, userEntity) {
-    return User.findOneAndUpdate({
-      _id: id
-    } , userEntity);
+    return User.findOneAndUpdate(
+      {
+        _id: id
+      },
+      userEntity
+    );
   },
 
   async deleteById(id) {
-    return User.findOneAndDelete({ id });
+    return User.findOneAndDelete({ _id: id });
   }
-}
-
+};

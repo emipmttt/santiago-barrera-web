@@ -79,13 +79,11 @@
                 <a
                   target="_blank"
                   class="white--text NueMontreal mt-4 text-decoration-none"
-                  href="~assets/pdf/resume.pdf"
+                  href="/pdf/santiago_barrera_resume.pdf"
                   download
                 >
                   Download it
                 </a>
-
-                <p class="white--text NueMontreal mt-4">Download it</p>
               </v-col>
             </v-row>
           </v-container>

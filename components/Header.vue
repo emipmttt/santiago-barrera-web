@@ -50,7 +50,7 @@ export default {
 
   computed: {
     showAnimation() {
-      console.log(process.env);
+      // console.log(process.env);
       return process.env.SHOW_ANIMATION;
     },
     orangeHeader() {

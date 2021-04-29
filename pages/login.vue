@@ -65,19 +65,13 @@
 
         <v-dialog v-model="userUnActive" max-width="600">
           <v-card>
-            <v-card-title>
-              Se requiere accion
-            </v-card-title>
+            <v-card-title> Account not active </v-card-title>
 
-            <v-card-text>
-              Se requiere una cuenta activa para entrar
-            </v-card-text>
+            <v-card-text> You need a active account to continue. </v-card-text>
 
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn color="primary" @click="userUnActive = false">
-                Ok
-              </v-btn>
+              <v-btn color="primary" @click="userUnActive = false"> Ok </v-btn>
             </v-card-actions>
           </v-card>
         </v-dialog>
@@ -123,6 +117,7 @@ export default {
       if (!createUserQuery.data.active) {
         this.userUnActive = true;
       } else {
+        localStorage.setItem("sb_u", JSON.stringify(createUserQuery.data));
         await this.$router.push("/admin_projects");
       }
     },

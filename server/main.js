@@ -1,7 +1,8 @@
 const routes = require("./interfaces/routes/index");
-const express = require('express');
+const express = require("express");
 const morgan = require("morgan");
-
+const dotenv = require("dotenv");
+dotenv.config();
 const app = express();
 
 app.use(express.urlencoded({ extended: false }));

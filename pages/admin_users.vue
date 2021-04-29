@@ -2,11 +2,7 @@
   <div>
     <div class="d-flex justify-space-between align-center NueMontreal">
       <div><h1>Users</h1></div>
-      <div>
-        <v-btn to="/" elevation="1">
-          HOME
-        </v-btn>
-      </div>
+     
     </div>
     <list-users/>
   </div>
