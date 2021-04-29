@@ -1,12 +1,12 @@
 <template>
   <footer class="footer">
     <div class="footer__row">
-      <h1 class="Hatton-Light">
+      <h1 class="Hatton-Light light">
         LET'S CREATE SOMETHING <br />
         WITH VALUE TOGETHER
       </h1>
       <br />
-      <div class="nav">
+      <div class="nav NueMontreal">
         <div style="flex: 1">
           <h3>CONNECT</h3>
           <a href="https://www.behance.net/santiagobarrera">BEHANCE</a>
@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-    <div class="footer__row text-center">
+    <div class="footer__row text-center NueMontreal">
       <a href="mailto:santiagobarrera.design@gmail.com">
         <b>SANTIAGOBARRERA.DESIGN@GMAIL.COM</b>
       </a>
@@ -37,6 +37,7 @@
         <nuxt-link to="/about">ABOUT</nuxt-link>
         <nuxt-link to="/contact">CONTACT</nuxt-link>
         <nuxt-link to="" disabled>JOURNAL</nuxt-link>
+        <nuxt-link to="" disabled>SHOP</nuxt-link>
       </nav>
       <!-- WORK ABOUT CONTACT JOURNAL -->
     </div>
@@ -59,6 +60,13 @@ export default {};
   &__row {
     flex: 1;
   }
+}
+
+.light {
+  font-size: 35px;
+  font-weight: 10;
+  letter-spacing: 2px;
+  line-height: normal;
 }
 
 @media screen and (max-width: 600px) {

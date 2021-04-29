@@ -63,6 +63,26 @@
             </v-card-actions>
           </v-card>
         </v-dialog>
+
+        <v-dialog v-model="registerSuccess" max-width="600">
+          <v-card>
+            <v-card-title>
+              Info
+            </v-card-title>
+
+            <v-card-text>
+              Contacta con un administrador para activar tu cuenta
+            </v-card-text>
+
+            <v-card-actions>
+              <v-spacer />
+
+              <v-btn depressed color="primary" @click="registerEnd">
+                OK
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
       </div>
     </div>
   </div>
@@ -76,6 +96,7 @@ export default {
   name: "register",
   data() {
     return {
+      registerSuccess: false,
       showPassword: false,
       password: "",
       name: "",
@@ -96,6 +117,7 @@ export default {
       };
 
       const createUserQuery = (await axios.post("/api/user/create", user)).data;
+
       if (!createUserQuery.ok) {
         this.loading = false;
         this.message = createUserQuery.error;
@@ -103,8 +125,14 @@ export default {
         return;
       }
 
-      this.$router.push("/admin_projects");
+      this.registerSuccess = true;
     },
+
+    registerEnd() {
+      this.registerSuccess = false;
+      this.$router.push("/login");
+    },
+
     ...mapMutations({
       sessionActive: "sessionActive",
     }),

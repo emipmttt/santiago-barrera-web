@@ -3,6 +3,7 @@ const GetAllProjects = require("../../application/user_cases/projects/GetAllProj
 const UpdateProject = require("../../application/user_cases/projects/UpdateProject");
 const DeleteProject = require("../../application/user_cases/projects/DeleteProject");
 const GetOneProject = require("../../application/user_cases/projects/GetOneProject");
+const rebuildScraping = require("../../application/user_cases/projects/RebuildScraping");
 
 module.exports = {
   async createProject(req, res) {
@@ -15,6 +16,24 @@ module.exports = {
         ok: true,
         data: project,
         message: "Project created"
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  },
+
+  async rebuildScraping(req, res) {
+    try {
+      const { id } = req.params;
+
+      console.log(req.params, id);
+
+      const project = await rebuildScraping(id);
+
+      return res.json({
+        ok: true,
+        data: project,
+        message: "Scraping Rebuilded"
       });
     } catch (e) {
       console.log(e);

@@ -62,6 +62,19 @@
             </v-card-actions>
           </v-card>
         </v-dialog>
+
+        <v-dialog v-model="userUnActive" max-width="600">
+          <v-card>
+            <v-card-title> Account not active </v-card-title>
+
+            <v-card-text> You need a active account to continue. </v-card-text>
+
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn color="primary" @click="userUnActive = false"> Ok </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
       </div>
     </div>
   </div>
@@ -75,6 +88,7 @@ export default {
   name: "register",
   data() {
     return {
+      userUnActive: false,
       showPassword: false,
       password: "",
       email: "",
@@ -100,7 +114,12 @@ export default {
         return;
       }
 
-      this.$router.push("/admin_projects");
+      if (!createUserQuery.data.active) {
+        this.userUnActive = true;
+      } else {
+        localStorage.setItem("sb_u", JSON.stringify(createUserQuery.data));
+        await this.$router.push("/admin_projects");
+      }
     },
     ...mapMutations({
       sessionActive: "sessionActive",

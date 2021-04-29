@@ -3,6 +3,8 @@ const findUser = require("../../application/user_cases/FindUserByEmail");
 const updateUserById = require("../../application/user_cases/UpdateUserById");
 const deleteById = require("../../application/user_cases/DeleteUserById");
 
+const GetAllUsers = require("../../application/user_cases/GetAllUsers");
+
 const { hash, compare } = require("../../infrastructure/security/HashManager");
 const { generate } = require("../../infrastructure/security/TokenManager");
 
@@ -81,8 +83,24 @@ module.exports = {
     }
   },
 
+  async getAllUsers(req, res) {
+    try {
+      const projects = await GetAllUsers();
+
+      return res.json({
+        ok: true,
+        data: projects
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  },
+
   async updateUser(req, res) {
     try {
+
+      console.log(req.params.id)
+      console.log(req.body)
       const id = req.params.id;
       await updateUserById(id, req.body);
 
