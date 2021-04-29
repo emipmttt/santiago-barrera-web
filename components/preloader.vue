@@ -30,7 +30,7 @@ export default {
 
 #preloader_backgroundAnimation {
   animation-name: backgroundAnimation;
-  animation-duration: 9s;
+  animation-duration: 6s;
 }
 
 @keyframes backgroundAnimation {
@@ -46,7 +46,7 @@ export default {
   position: relative;
   display: flex;
   animation-name: animatedTex;
-  animation-duration: 9s;
+  animation-duration: 6s;
   width: 30%;
 }
 
@@ -86,7 +86,7 @@ export default {
   background-color: #ef712f;
   animation-name: animation;
   filter: blur(10px);
-  animation-duration: 9s;
+  animation-duration: 6s;
   animation-timing-function: linear;
   position: relative;
 }

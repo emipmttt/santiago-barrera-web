@@ -47,26 +47,20 @@ export default {
 
   data: () => ({
     isVisible: true,
+    showAnimation: process.env.SHOW_ANIMATION ? true : false,
   }),
 
   computed: {
-    showAnimation() {
-      // console.log(process.env);
-      return process.env.SHOW_ANIMATION;
-    },
     orangeHeader() {
       return this.$route.path == "/about";
     },
   },
 
-  async mounted() {
-    setTimeout(this.visible, 7000);
-  },
-
-  methods: {
-    visible() {
+  mounted() {
+    console.log(this.showAnimation);
+    setTimeout(() => {
       this.isVisible = false;
-    },
+    }, 5500);
   },
 };
 </script>

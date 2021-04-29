@@ -7,6 +7,10 @@ export default {
     port: 3000 // default: 3000
   },
 
+  env: {
+    SHOW_ANIMATION: process.env.SHOW_ANIMATION
+  },
+
   head: {
     titleTemplate: "%s | Editorial & Brand Designer",
     title: "Santiago Barrera",
