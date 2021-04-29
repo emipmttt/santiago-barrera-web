@@ -9,15 +9,17 @@
         </v-col>
       </v-row>
     </v-container>
-
-    <template v-if="projects.length > 0">
-      <PortfolioItem
-        v-for="(project, index) in projects"
-        :key="index"
-        :index="index"
-        :project="project"
-      />
-    </template>
+    <section v-if="projects.length > 0">
+      <paginate name="projects" :list="projects" :per="2">
+        <PortfolioItem
+          :key="index"
+          v-for="(project, index) in paginated('projects')"
+          :index="index"
+          :project="project"
+        />
+      </paginate>
+      <paginate-links for="projects"></paginate-links>
+    </section>
 
     <template v-else>
       <h1 class="text-center mt-10 Hatton-Light">No projects yet :(</h1>
@@ -25,7 +27,7 @@
   </div>
 </template>
 
-<script>
+<script>  
 import PortfolioItem from "../components/PortfolioItem";
 import getProjects from "~/middleware/getProjects";
 
@@ -34,6 +36,7 @@ export default {
 
   data: () => ({
     projects: [],
+    paginate: ["projects"],
   }),
 
   async mounted() {

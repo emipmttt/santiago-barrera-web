@@ -12,19 +12,21 @@
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="bar__title">
-            <img :src="require('~/assets/images/SantiagoBarreraLogo.png')" width="200" />
+            <img
+              :src="require('~/assets/images/SantiagoBarreraLogo.png')"
+              width="200"
+            />
           </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
-
       <v-list dense nav>
-        <nuxt-link to="/admin_projects">
+        <nuxt-link to="/">
           <v-list-item link>
             <v-list-item-icon>
-              <v-icon> mdi-store </v-icon>
+              <v-icon> mdi-home </v-icon>
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title>Projects</v-list-item-title>
+              <v-list-item-title>Home</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </nuxt-link>
@@ -36,6 +38,17 @@
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title>Users</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </nuxt-link>
+
+        <nuxt-link to="/admin_projects">
+          <v-list-item link>
+            <v-list-item-icon>
+              <v-icon> mdi-store </v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title>Projects</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </nuxt-link>
@@ -58,6 +71,7 @@ export default {
   name: "navigation_drawer",
   methods: {
     logout() {
+      localStorage.removeItem("sb_u");
       this.$router.push("/");
     },
   },

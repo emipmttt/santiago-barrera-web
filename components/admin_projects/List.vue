@@ -17,7 +17,10 @@
           <td>{{ project.title }}</td>
           <td>{{ new Date(project.date).toLocaleDateString() }}</td>
           <td>
-            <v-btn @click="deleteProject(project._id)">
+            <v-btn :disabled="loading" @click="rebuildScraping(project._id)">
+              <v-icon color="#FF8D3B">mdi-reload</v-icon>
+            </v-btn>
+            <v-btn :disabled="loading" @click="deleteProject(project._id)">
               <v-icon color="#FF8D3B">mdi-delete</v-icon>
             </v-btn>
           </td>
@@ -34,6 +37,7 @@ export default {
   data() {
     return {
       projects: [],
+      loading: false,
     };
   },
   methods: {
@@ -56,6 +60,13 @@ export default {
     async deleteProject(id) {
       await axios.delete("/api/projects/" + id);
       await this.getProjects_();
+    },
+
+    async rebuildScraping(id) {
+      this.loading = true;
+      await axios.put("/api/projects/rebuild-scraping/" + id);
+      await this.getProjects_();
+      this.loading = false;
     },
   },
   async mounted() {
