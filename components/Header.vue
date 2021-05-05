@@ -16,7 +16,7 @@
       <v-btn to="/about" text plain :ripple="false"> ABOUT </v-btn>
       <v-btn to="/contact" text plain :ripple="false"> CONTACT </v-btn>
 
-      <v-btn text plain :ripple="false" disabled> JOURNAL </v-btn>
+      <v-btn to="/journal" text plain :ripple="false"> JOURNAL </v-btn>
 
       <v-btn text plain :ripple="false" disabled> SHOP </v-btn>
       <v-btn text plain :ripple="false" disabled> </v-btn>

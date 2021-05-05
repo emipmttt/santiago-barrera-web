@@ -1,11 +1,16 @@
 <template>
   <div class="article--container">
-    <div class="article__title NeueMontreal-Bold">
-      {{ article.title }}
-    </div>
-    <div class="article__content NueMontreal">
-      {{article.content}}
-    </div>
+    <nuxt-link
+      :to="`/post/${article.id}`"
+      class="article--containerLink"
+    >
+      <div class="article__title NeueMontreal-Bold">
+        {{ article.title }}
+      </div>
+      <div class="article__content NueMontreal">
+        {{article.content}}
+      </div>
+    </nuxt-link>
   </div>
 </template>
 
@@ -19,6 +24,11 @@ export default {
 </script>
 
 <style scoped>
+
+.article--containerLink{
+  text-decoration-line: none;
+  color: #1F2020;
+}
 
 .article--container{
   width: 30%;

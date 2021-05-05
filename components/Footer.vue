@@ -36,7 +36,7 @@
         <nuxt-link to="/projects">WORK</nuxt-link>
         <nuxt-link to="/about">ABOUT</nuxt-link>
         <nuxt-link to="/contact">CONTACT</nuxt-link>
-        <nuxt-link to="" disabled>JOURNAL</nuxt-link>
+        <nuxt-link to="/journal" disabled>JOURNAL</nuxt-link>
         <nuxt-link to="" disabled>SHOP</nuxt-link>
       </nav>
       <!-- WORK ABOUT CONTACT JOURNAL -->

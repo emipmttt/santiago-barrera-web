@@ -19,6 +19,7 @@ export default {
   data(){
     return{
       article: {
+        id: 'idRandom',
         title: 'Typography as art and chaos',
         content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo iste libero nulla! Culpa doloribus, eum incidunt laborum maxime totam vero. Aperiam, aut dolorum earum illum modi omnis possimus quia reprehenderit.'
       }
