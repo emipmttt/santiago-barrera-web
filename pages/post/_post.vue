@@ -103,7 +103,7 @@
         </p>
 
 
-        <v-btn plain :ripple="false" color="#ef712f">
+        <v-btn to="/journal" plain :ripple="false" color="#ef712f">
           <v-icon left>mdi-arrow-left</v-icon>
           VIEW ALL ARTICLES
         </v-btn>
