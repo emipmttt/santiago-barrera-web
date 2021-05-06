@@ -11,4 +11,4 @@ router.get("/", getSettings);
 router.post("/", createSetting);
 router.put("/:id", updateSettings)
 
-export default router;
+module.exports = router;

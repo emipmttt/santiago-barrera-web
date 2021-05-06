@@ -1,7 +1,7 @@
 const settingsModel = require("../../domain/Setting");
 const settingsRepository = require("../../infrastructure/repositories/SettingsRepository");
 
-export default {
+module.exports = {
   async createSetting(req, res) {
     try {
       const model = new settingsModel(null, req.body.availableToWork, req.body.words);

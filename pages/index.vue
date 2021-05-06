@@ -65,7 +65,7 @@
       </nuxt-link>
     </div>
 
-    <!-- 
+    <!--
 
     <v-divider class="divider" />
     <PortfolioItem /> -->
