@@ -11,6 +11,8 @@ const environment = () => {
     }
   };
 
+  console.log(environment)
+
   if (process.env.NODE_ENV === "development") {
     // TODO: HANDLE THIS
   }
