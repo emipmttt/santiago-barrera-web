@@ -4,7 +4,7 @@
       <div><h1>Articles</h1></div>
 
       <div>
-        <v-btn dark color="#FF8D3B">
+        <v-btn dark color="#FF8D3B" @click="createArticle">
           CREATE
         </v-btn>
       </div>
@@ -59,22 +59,27 @@
       @closeModal="closeModal"
     />
 
-
+    <CreateArticleModal
+      :active="createActive"
+      @closeModal="closeModal"
+    />
   </div>
 </template>
 
 <script>
 import axios from "axios";
 import ShowArticleModal from "../components/admin_articles/ShowArticleModal";
+import CreateArticleModal from "../components/admin_articles/CreateArticleModal";
 
 export default {
-  components: {ShowArticleModal},
+  components: {CreateArticleModal, ShowArticleModal},
   layout: "admin",
   name: "admin_articles",
 
   data: () => ({
     articles: [],
     showActive: false,
+    createActive: false,
     articleSelected: {},
   }),
 
@@ -88,13 +93,19 @@ export default {
       this.articles = request.data.data;
     },
 
+    createArticle() {
+      this.createActive = true;
+    },
+
     showArticle(article) {
       this.showActive = true;
       this.articleSelected = article;
     },
 
-    closeModal() {
+    async closeModal() {
+      if (this.createActive) await this.getArticles();
       this.showActive = false;
+      this.createActive = false;
       this.articleSelected = {};
     },
 
