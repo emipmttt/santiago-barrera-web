@@ -1,4 +1,4 @@
-const Settings = require("../orm/mongoose/schemas/Content");
+const Settings = require("../orm/mongoose/schemas/Setting");
 
 module.exports = {
   async create(userModel) {
@@ -15,9 +15,7 @@ module.exports = {
     })
   },
 
-  async getSettings(settingsId) {
-    return Settings.findOneAndUpdate({
-      _id: settingsId
-    })
+  async getSettings() {
+    return Settings.find().populate("content")
   }
 };

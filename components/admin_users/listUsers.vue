@@ -17,7 +17,7 @@
             <v-switch
               v-model="user.active"
               @change="activateAccount(user, $event)"
-            ></v-switch>
+            />
           </td>
           <td>
             <v-btn @click="deleteUser(user._id)">
