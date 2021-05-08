@@ -4,27 +4,34 @@
       <p>Journal</p>
     </div>
     <div class="article">
-      <item-article :article="article"/>
-      <item-article :article="article"/>
-      <item-article :article="article"/>
+
+      <div v-for="item in allArticles" :key="item.id">
+        <item-article :article="item"/>
+      </div>
+
     </div>
   </div>
 </template>
 
 <script>
 import ItemArticle from "../components/articleJournal/itemArticle";
+import getArticles from "../middleware/getArticles";
 export default {
   name: "journal",
   components: {ItemArticle},
   data(){
     return{
-      article: {
-        id: 'idRandom',
-        title: 'Typography as art and chaos',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo iste libero nulla! Culpa doloribus, eum incidunt laborum maxime totam vero. Aperiam, aut dolorum earum illum modi omnis possimus quia reprehenderit.'
-      }
+      allArticles: {},
     }
-  }
+  },
+  methods:{
+    async getAllArticles(){
+      this.allArticles = await getArticles();
+    }
+  },
+  mounted() {
+    this.getAllArticles();
+  },
 }
 </script>
 

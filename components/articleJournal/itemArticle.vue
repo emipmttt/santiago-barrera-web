@@ -1,14 +1,14 @@
 <template>
   <div class="article--container">
     <nuxt-link
-      :to="`/post/${article.id}`"
+      :to="`/post/${article._id}`"
       class="article--containerLink"
     >
       <div class="article__title NeueMontreal-Bold">
         {{ article.title }}
       </div>
       <div class="article__content NueMontreal">
-        {{article.content}}
+        {{article.body.substr(42,100)}}
       </div>
     </nuxt-link>
   </div>
