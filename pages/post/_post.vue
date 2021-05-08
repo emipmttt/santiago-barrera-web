@@ -39,11 +39,13 @@
             </v-btn>
           </a>
 
-          <v-btn icon>
-            <v-icon color="black">
-              mdi-linkedin
-            </v-icon>
-          </v-btn>
+          <a :href="`https://www.linkedin.com/shareArticle?mini=true&url=https://santiagobarrera.com/post/${this.$route.params.post}`">
+            <v-btn icon>
+              <v-icon color="black">
+                mdi-linkedin
+              </v-icon>
+            </v-btn>
+          </a>
         </div>
 
 
