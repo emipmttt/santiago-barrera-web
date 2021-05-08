@@ -22,30 +22,22 @@
         </h3>
 
         <div class="mt-4">
-          <div
-            class="fb-share-button"
-            data-href="https://developers.facebook.com/docs/plugins/"
-            data-layout="button_count"
-            data-size="small"
-          >
-            <a
-              target="_blank"
-              href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsantiagobarrera.com%2Fpost%2Fqwqewe&amp;src=sdkpreparse"
-              class="fb-xfbml-parse-ignore"
-            >
-              <v-btn icon>
-                <v-icon color="black">
-                  mdi-facebook
-                </v-icon>
-              </v-btn>
-            </a>
-          </div>
 
-          <v-btn icon>
-            <v-icon color="black">
-              mdi-twitter
-            </v-icon>
-          </v-btn>
+          <a :href="`http://www.facebook.com/sharer.php?u=https://santiagobarrera.com/post/${this.$route.params.post}}`">
+            <v-btn icon>
+              <v-icon color="black">
+                mdi-facebook
+              </v-icon>
+            </v-btn>
+          </a>
+
+          <a :href="`https://twitter.com/intent/tweet?text=Santiago%20Barrera,%20Editorial%20Brand%20Designer&url=https://santiagobarrera.com/post/${this.$route.params.post}`" target="_blank">
+            <v-btn icon>
+              <v-icon color="black">
+                mdi-twitter
+              </v-icon>
+            </v-btn>
+          </a>
 
           <v-btn icon>
             <v-icon color="black">
@@ -83,12 +75,6 @@ import axios from "axios";
 
 export default {
   name: "_id",
-  meta:[
-    {
-      link: "https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v10.0",
-      nonce: "xiCCGc9D"
-    },
-  ],
   data(){
     return{
       completeArticle: {},
