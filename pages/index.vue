@@ -13,7 +13,9 @@
 
           <h3 class="mt-4 NueMontreal" style="font-weight: 100">
             DESIGN & ART LOVER. I ALSO LOVE
-            <span class="super-text NeueMontreal-Bold">{{ words[index] }}</span>
+            <span class="super-text NeueMontreal-Bold uppercase">{{
+              words[index]
+            }}</span>
           </h3>
         </v-col>
 
@@ -107,48 +109,29 @@
 import PortfolioItem from "../components/PortfolioItem";
 import Preloader from "../components/preloader";
 import getProjects from "~/middleware/getProjects";
+import getSettings from "../middleware/getSettings";
 
 export default {
   components: { Preloader, PortfolioItem },
   data: () => ({
     index: 0,
-    words: [
-      "I ALSO LOVE COFFEE",
-      "CATS",
-      "IMAGINE",
-      "TYPOGRAPHY",
-      "DRAW",
-      "DREAM",
-      "LEARN",
-      "TEACH",
-      "THINK",
-      "MANGO",
-      "DISCOVER",
-      "DEVELOP",
-      "PAINTING",
-      "JOKES",
-      "SUSHI",
-      "CULTURE",
-      "CAIPIRINHA",
-      "BEER",
-      "MUSEUMS",
-      "TRAVEL",
-      "PHOTOGRAPHY",
-      "MEET PEOPLE",
-      "STRAWBERRIES",
-    ],
+    words: [],
     projects: [],
   }),
 
   async mounted() {
+    await this.getWords();
     this.randomIndex();
     const projects = await getProjects(4);
     this.projects = projects;
   },
 
   methods: {
+    async getWords() {
+      this.words = (await getSettings())[0].words;
+    },
     randomIndex() {
-      this.index = Math.floor(Math.random() * (this.words.length - 1 + 1) + 1);
+      this.index = Math.floor(Math.random() * this.words.length);
 
       setTimeout(() => {
         this.randomIndex();
@@ -159,6 +142,10 @@ export default {
 </script>
 
 <style>
+.uppercase {
+  text-transform: uppercase;
+}
+
 .light {
   font-size: 56px;
   font-weight: 100;

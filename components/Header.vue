@@ -26,6 +26,12 @@
 
     <v-btn text plain :ripple="false" class="NueMontreal">
       AVAILABLE TO WORK
+
+      <img
+        :src="require('@/assets/images/bg-orange.png')"
+        :class="{ 'filter-wb': !settings.availableToWork }"
+        class="available-to-work-circle"
+      />
     </v-btn>
 
     <v-spacer class="d-none d-md-flex" />
@@ -40,7 +46,9 @@
 </template>
 
 <script>
+import getSettings from "../middleware/getSettings";
 import Preloader from "./preloader";
+
 export default {
   name: "Header",
   components: { Preloader },
@@ -48,6 +56,7 @@ export default {
   data: () => ({
     isVisible: true,
     showAnimation: process.env.SHOW_ANIMATION ? true : false,
+    settings: {},
   }),
 
   computed: {
@@ -56,8 +65,15 @@ export default {
     },
   },
 
+  methods: {
+    async getAvailableToWorkData() {
+      this.settings = (await getSettings())[0];
+      console.log("this.settings", this.settings);
+    },
+  },
+
   mounted() {
-    console.log(this.showAnimation);
+    this.getAvailableToWorkData();
     setTimeout(() => {
       this.isVisible = false;
     }, 5500);
@@ -76,5 +92,13 @@ export default {
   .button_app_style {
     margin: 0;
   }
+}
+
+.filter-wb {
+  filter: grayscale(1);
+}
+
+.available-to-work-circle {
+  width: 40px;
 }
 </style>

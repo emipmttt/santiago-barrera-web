@@ -53,7 +53,7 @@
           </v-list-item>
         </nuxt-link>
 
-        <nuxt-link to="/settings">
+        <nuxt-link to="/admin_settings">
           <v-list-item link>
             <v-list-item-icon>
               <v-icon> mdi-cog </v-icon>

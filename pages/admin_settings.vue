@@ -12,35 +12,32 @@
           @change="changeAvailableToWork($event)"
         />
       </div>
-      <v-divider/>
-      <br/>
+      <v-divider />
+      <br />
 
       <div class="settingContainer--titles">
-        <div>
-          Words
-        </div>
-        <add-words :settings="allSettings"/>
+        <div>Words</div>
+        <add-words :settings="allSettings" />
       </div>
 
       <div>
         <v-simple-table>
           <template v-slot:default>
             <tbody>
-            <tr v-for="item in allSettings.words">
-              <td>{{ item }}</td>
+              <tr :key="index" v-for="(item, index) in allSettings.words">
+                <td>{{ item }}</td>
 
-              <td>
-                <v-btn @click="deleteWord(item)">
-                  <v-icon color="#FF8D3B">mdi-delete</v-icon>
-                </v-btn>
-              </td>
-            </tr>
+                <td>
+                  <v-btn @click="deleteWord(item)">
+                    <v-icon color="#FF8D3B">mdi-delete</v-icon>
+                  </v-btn>
+                </td>
+              </tr>
             </tbody>
           </template>
         </v-simple-table>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -51,49 +48,47 @@ import axios from "axios";
 
 export default {
   layout: "admin",
-  name: "settings",
+  name: "admin_settings",
   components: { addWords },
-  data(){
-    return{
-      allSettings: {}
-    }
+  data() {
+    return {
+      allSettings: {},
+    };
   },
-  methods:{
+  methods: {
     async getSettings() {
       const conf = await getSettings();
-      this.allSettings = conf[0];
+      if (conf[0]) this.allSettings = conf[0];
     },
     async changeAvailableToWork(event) {
-      this.allSettings.availableToWork = event
+      this.allSettings.availableToWork = event;
 
-      await axios.put('api/settings/0', this.allSettings);
+      await axios.put("api/settings/0", this.allSettings);
     },
     async deleteWord(item) {
       const index = this.allSettings.words.indexOf(item);
 
-      this.allSettings.words.splice( index, 1)
+      this.allSettings.words.splice(index, 1);
 
-      await axios.put('api/settings/0', this.allSettings);
+      await axios.put("api/settings/0", this.allSettings);
     },
   },
   async mounted() {
-    await this.getSettings()
-  }
+    await this.getSettings();
+  },
 };
 </script>
 
 <style scoped>
-
-.settingContainer{
+.settingContainer {
   background: #fff;
   padding: 1rem;
   border-radius: 10px;
 }
 
-.settingContainer--titles{
+.settingContainer--titles {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 </style>
