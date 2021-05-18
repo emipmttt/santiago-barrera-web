@@ -42,7 +42,7 @@
                 </v-icon>
               </v-btn>
 
-              <v-btn>
+              <v-btn @click="updateArticle(article)">
                 <v-icon color="#FF8D3B">
                   mdi-pencil
                 </v-icon>
@@ -59,6 +59,12 @@
       @closeModal="closeModal"
     />
 
+    <update-article-modal
+      :active="updateActive"
+      :article="articleSelected"
+      @closeModal="closeModal"
+    />
+
     <CreateArticleModal
       :active="createActive"
       @closeModal="closeModal"
@@ -70,15 +76,17 @@
 import axios from "axios";
 import ShowArticleModal from "../components/admin_articles/ShowArticleModal";
 import CreateArticleModal from "../components/admin_articles/CreateArticleModal";
+import UpdateArticleModal from "../components/admin_articles/updateArticleModal";
 
 export default {
-  components: {CreateArticleModal, ShowArticleModal},
+  components: {UpdateArticleModal, CreateArticleModal, ShowArticleModal},
   layout: "admin",
   name: "admin_articles",
 
   data: () => ({
     articles: [],
     showActive: false,
+    updateActive: false,
     createActive: false,
     articleSelected: {},
   }),
@@ -102,9 +110,16 @@ export default {
       this.articleSelected = article;
     },
 
+
+    updateArticle(article) {
+      this.updateActive = true;
+      this.articleSelected = article;
+    },
+
     async closeModal() {
       if (this.createActive) await this.getArticles();
       this.showActive = false;
+      this.updateActive = false;
       this.createActive = false;
       this.articleSelected = {};
     },
