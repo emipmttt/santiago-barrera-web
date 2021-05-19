@@ -15,7 +15,7 @@
           <span class="text__primary">Santiago Barrera</span>
         </p>
 
-        <div id="content"></div>
+        <div v-html="completeArticle.body"/>
 
         <h3 class="mt-10 NeueMontreal-Bold">
           Share this article
@@ -94,8 +94,6 @@ export default {
 
       this.completeArticle.createDate = d.toLocaleString ( "en-En" ,options);
 
-      const txt = document.getElementById('content');
-      txt.innerHTML = this.completeArticle.body;
     },
   },
   mounted() {

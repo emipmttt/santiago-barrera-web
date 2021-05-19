@@ -114,6 +114,7 @@ export default {
     updateArticle(article) {
       this.updateActive = true;
       this.articleSelected = article;
+      console.log(article)
     },
 
     async closeModal() {
