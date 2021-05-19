@@ -18,10 +18,8 @@
             class="quill-editor"
             v-quill:myQuillEditor="editorOption"
             @change="onEditorChange($event)"
-            ref="editor"
-          >
-            <div v-html="article.body" />
-          </div>
+            :content="article.body"
+            ref="editor" />
         </div>
 
       </v-card-text>
