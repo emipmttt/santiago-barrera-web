@@ -23,7 +23,7 @@
         <tbody>
         <tr v-for="product in products" :key="product.id">
           <td>
-            <v-icon x-large>mdi-store</v-icon>
+            <v-icon x-large>{{product.image}}</v-icon>
           </td>
           <td>
             {{ product.title }}
@@ -92,8 +92,8 @@ export default {
       products: {
         0:{
           id: '1',
-          image: '',
-          title: 'Generic Title',
+          image: 'mdi-death-star-variant',
+          title: 'Death Star Variant',
           description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, commodi consequatur cumque deleniti doloremque fuga impedit iste itaque nesciunt pariatur perferendis, praesentium quasi qui quidem ratione, sapiente similique suscipit velit.',
           price: '$400',
           oldPrice: '$500',
@@ -103,8 +103,8 @@ export default {
         },
         1:{
           id: '2',
-          image: '',
-          title: 'Generic Title 2',
+          image: 'mdi-death-star',
+          title: 'Death Star',
           description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, commodi consequatur cumque deleniti doloremque fuga impedit iste itaque nesciunt pariatur perferendis, praesentium quasi qui quidem ratione, sapiente similique suscipit velit.',
           price: '$400',
           oldPrice: '$500',

@@ -9,6 +9,8 @@
         <div v-html="article.body" />
       </v-card-text>
 
+      <v-divider/>
+
       <v-card-actions>
         <v-spacer />
 
