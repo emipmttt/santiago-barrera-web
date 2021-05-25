@@ -9,10 +9,12 @@
         <div v-html="article.body" />
       </v-card-text>
 
+      <v-divider/>
+
       <v-card-actions>
         <v-spacer />
 
-        <v-btn color="#FF8D3B" dark @click="closeModal">
+        <v-btn text color="#FF8D3B" @click="closeModal">
           CLOSE
         </v-btn>
       </v-card-actions>

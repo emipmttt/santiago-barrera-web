@@ -25,16 +25,16 @@
 
       </v-card-text>
 
+      <v-divider/>
 
       <v-card-actions>
         <v-spacer />
-
-        <v-btn color="#FF8D3B" dark @click="createArticle" :loading="loading">
-          Save
+        <v-btn text @click="closeModal">
+          Cancel
         </v-btn>
 
-        <v-btn @click="closeModal" outlined color="#FF8D3B">
-          Cancel
+        <v-btn text @click="createArticle" color="#FF8D3B" :loading="loading">
+          Save
         </v-btn>
       </v-card-actions>
     </v-card>

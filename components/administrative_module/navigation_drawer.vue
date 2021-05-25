@@ -75,6 +75,17 @@
           </v-list-item>
         </nuxt-link>
 
+        <nuxt-link to="/admin_products">
+          <v-list-item link>
+            <v-list-item-icon>
+              <v-icon> mdi-cart</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title>Products</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </nuxt-link>
+
         <v-list-item @click="logout">
           <v-list-item-icon>
             <v-icon> mdi-exit-to-app </v-icon>
