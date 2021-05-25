@@ -49,7 +49,7 @@
               </v-icon>
             </v-btn>
 
-            <v-btn @click="">
+            <v-btn @click="updateProduct(product)">
               <v-icon color="#FF8D3B">
                 mdi-pencil
               </v-icon>
@@ -66,9 +66,9 @@
       @closeModal="closeModal"
     />
 
-    <UpdateArticleModal
+    <UpdateProductModal
       :active="updateActive"
-      :article="productSelected"
+      :product="productSelected"
       @closeModal="closeModal"
     />
   </div>
@@ -77,11 +77,11 @@
 <script>
 import CreateProductModal from "../components/admin_products/CreateProductModal";
 import ShowProductModal from "../components/admin_products/ShowProductModal";
+import UpdateProductModal from "../components/admin_products/UpdateProductModal";
 import axios from "axios";
-import UpdateArticleModal from "../components/admin_products/UpdateArticleModal";
 export default {
   name: "admin_products",
-  components: {UpdateArticleModal, ShowProductModal, CreateProductModal},
+  components: {UpdateProductModal, ShowProductModal, CreateProductModal},
   layout: "admin",
   data(){
     return{
@@ -116,6 +116,12 @@ export default {
     }
   },
   methods: {
+    updateProduct(article) {
+      this.updateActive = true;
+      this.productSelected = article;
+      console.log(article)
+    },
+
     showProduct(product) {
       this.showActive = true;
       this.productSelected = product;
