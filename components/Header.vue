@@ -18,7 +18,7 @@
 
       <v-btn to="/journal" text plain :ripple="false"> JOURNAL </v-btn>
 
-      <v-btn text plain :ripple="false" disabled> SHOP </v-btn>
+      <v-btn to="/shop" text plain :ripple="false"> SHOP </v-btn>
       <v-btn text plain :ripple="false" disabled> </v-btn>
     </v-toolbar-items>
 
