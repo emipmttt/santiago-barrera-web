@@ -24,6 +24,8 @@
 
       </v-card-text>
 
+      <v-divider/>
+
       <v-card-actions>
         <v-spacer />
         <v-btn text @click="closeModal" :disabled="loading">

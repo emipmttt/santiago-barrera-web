@@ -37,7 +37,7 @@
           </td>
 
           <td>
-            <v-btn @click="">
+            <v-btn @click="showProduct(product)">
               <v-icon color="#FF8D3B">
                 mdi-eye
               </v-icon>
@@ -60,20 +60,15 @@
       </template>
     </v-simple-table>
 
-    <ShowArticleModal
+    <ShowProductModal
       :active="showActive"
-      :article="articleSelected"
+      :product="productSelected"
       @closeModal="closeModal"
     />
 
-    <update-article-modal
+    <UpdateArticleModal
       :active="updateActive"
-      :article="articleSelected"
-      @closeModal="closeModal"
-    />
-
-    <CreateArticleModal
-      :active="createActive"
+      :article="productSelected"
       @closeModal="closeModal"
     />
   </div>
@@ -81,12 +76,19 @@
 
 <script>
 import CreateProductModal from "../components/admin_products/CreateProductModal";
+import ShowProductModal from "../components/admin_products/ShowProductModal";
+import axios from "axios";
+import UpdateArticleModal from "../components/admin_products/UpdateArticleModal";
 export default {
   name: "admin_products",
-  components: {CreateProductModal},
+  components: {UpdateArticleModal, ShowProductModal, CreateProductModal},
   layout: "admin",
   data(){
     return{
+      showActive: false,
+      updateActive: false,
+      productSelected: {},
+
       products: {
         0:{
           id: '1',
@@ -112,7 +114,19 @@ export default {
         },
       },
     }
-  }
+  },
+  methods: {
+    showProduct(product) {
+      this.showActive = true;
+      this.productSelected = product;
+    },
+
+    async closeModal() {
+      this.showActive = false;
+      this.updateActive = false;
+      this.articleSelected = {};
+    },
+  },
 }
 </script>
 

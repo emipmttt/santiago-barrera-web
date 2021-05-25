@@ -34,28 +34,28 @@
           :disabled="loading"
           color="#FF8D3B"
           label="Price"
-          v-model="Price"
+          v-model="price"
         />
         <v-text-field
           autocomplete="off"
           :disabled="loading"
           color="#FF8D3B"
           label="Old Price"
-          v-model="OldPrice"
+          v-model="oldPrice"
         />
         <v-text-field
           autocomplete="off"
           :disabled="loading"
           color="#FF8D3B"
           label="Stock"
-          v-model="Stock"
+          v-model="stock"
         />
         <v-text-field
           autocomplete="off"
           :disabled="loading"
           color="#FF8D3B"
           label="Size"
-          v-model="Size"
+          v-model="size"
         />
         <v-text-field
           autocomplete="off"
@@ -72,7 +72,7 @@
       <v-card-actions>
         <v-spacer></v-spacer>
         <v-btn :disabled="loading" text @click="dialog = false"> Cancel </v-btn>
-        <v-btn :disabled="loading" text color="#FF8D3B" @click="create">
+        <v-btn :disabled="loading" text color="#FF8D3B" @click="">
           Create
         </v-btn>
       </v-card-actions>
@@ -82,7 +82,21 @@
 
 <script>
 export default {
-  name: "CreateProductModal"
+  name: "CreateProductModal",
+  data() {
+    return {
+      dialog: false,
+      title: "",
+      description: "",
+      image: "",
+      price: "",
+      oldPrice: "",
+      stock: "",
+      size: "",
+      publication: "",
+      loading: false,
+    };
+  },
 }
 </script>
 
