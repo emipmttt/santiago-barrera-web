@@ -26,13 +26,12 @@
 
       <v-card-actions>
         <v-spacer />
-
-        <v-btn color="#FF8D3B" dark @click="updateArticle" :loading="loading">
-          Save
+        <v-btn text @click="closeModal" :disabled="loading">
+          CLOSE
         </v-btn>
 
-        <v-btn color="#FF8D3B" :disabled="loading" outlined @click="closeModal">
-          CLOSE
+        <v-btn text @click="updateArticle" color="#FF8D3B" :loading="loading">
+          Save
         </v-btn>
       </v-card-actions>
     </v-card>
