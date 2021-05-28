@@ -27,7 +27,7 @@
           :disabled="loading"
           color="#FF8D3B"
           label="Image"
-          v-model="image"
+          v-model="url"
         />
         <v-text-field
           autocomplete="off"
@@ -57,14 +57,6 @@
           label="Size"
           v-model="size"
         />
-        <v-text-field
-          autocomplete="off"
-          :disabled="loading"
-          color="#FF8D3B"
-          label="Publication"
-          v-model="publication"
-          type="date"
-        />
       </v-card-text>
 
       <v-divider></v-divider>
@@ -72,7 +64,7 @@
       <v-card-actions>
         <v-spacer></v-spacer>
         <v-btn :disabled="loading" text @click="dialog = false"> Cancel </v-btn>
-        <v-btn :disabled="loading" text color="#FF8D3B" @click="">
+        <v-btn :disabled="loading" text color="#FF8D3B" @click="createProduct()">
           Create
         </v-btn>
       </v-card-actions>
@@ -81,21 +73,50 @@
 </template>
 
 <script>
+
+import axios from "axios";
+
 export default {
   name: "CreateProductModal",
+
   data() {
     return {
       dialog: false,
+      loading: false,
+
       title: "",
       description: "",
-      image: "",
+      url: "",
       price: "",
       oldPrice: "",
       stock: "",
       size: "",
-      publication: "",
-      loading: false,
     };
+  },
+
+  methods:{
+    async createProduct() {
+      this.loading = true;
+      try {
+        await axios.post("/api/products/create", {
+          title: this.title,
+          description: this.description,
+          url: this.url,
+          price: this.price,
+          oldPrice: this.oldPrice,
+          stock: this.stock,
+          size: this.size,
+          publication: Date.now(),
+        });
+
+        location.reload();
+
+      } catch (e) {
+        console.log(e);
+      } finally {
+        this.loading = false;
+      }
+    }
   },
 }
 </script>

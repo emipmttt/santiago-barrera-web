@@ -11,13 +11,13 @@ module.exports = class {
     stock
   ) {
     this.id = id;
-    this.name = title;
-    this.email = description;
-    this.password = url;
-    this.active = price;
-    this.active = oldPrice;
-    this.active = size;
-    this.active = publication;
-    this.type = stock;
+    this.title = title;
+    this.description = description;
+    this.url = url;
+    this.price = price;
+    this.oldPrice = oldPrice;
+    this.size = size;
+    this.publication = publication;
+    this.stock = stock;
   }
 };

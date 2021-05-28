@@ -21,7 +21,7 @@
         </thead>
 
         <tbody>
-        <tr v-for="product in products" :key="product.id">
+        <tr v-for="product in products" :key="product._id">
           <td>
             <v-icon x-large>{{product.image}}</v-icon>
           </td>
@@ -79,6 +79,7 @@ import CreateProductModal from "../components/admin_products/CreateProductModal"
 import ShowProductModal from "../components/admin_products/ShowProductModal";
 import UpdateProductModal from "../components/admin_products/UpdateProductModal";
 import getProducts from "../middleware/getProducts";
+import axios from "axios";
 
 export default {
   name: "admin_products",
@@ -101,7 +102,8 @@ export default {
   methods: {
     async getProducts() {
       const request = await getProducts();
-      this.products = request.data.data;
+      console.log(request)
+      this.products = request;
     },
 
     updateProduct(article) {

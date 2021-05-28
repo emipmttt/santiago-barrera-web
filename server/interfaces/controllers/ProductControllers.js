@@ -5,6 +5,7 @@ module.exports = {
   async createProduct(req, res) {
     try {
       const model = new Product(null, req.body.title, req.body.description, req.body.url, req.body.price, req.body.oldPrice, req.body.size, req.body.publication, req.body.stock);
+      console.log(model)
       const product = await ProductsRepository.store(model);
 
       return res.json({
