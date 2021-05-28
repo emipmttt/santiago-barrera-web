@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="itemShop">
-      <img src="../../static/image.jpg" class="itemShop--img"/>
+      <img :src="product.url" class="itemShop--img"/>
     </div>
     <div class="itemShop__details NueMontreal">
       <div>
@@ -45,6 +45,7 @@ export default {
 .itemShop__details{
   width: 97%;
   display: flex;
+  line-height: 1.2rem;
   justify-content: space-between;
   font-size: .9rem;
   margin-top: 1rem;

@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="itemShop">
-      <img src="../../static/image.jpg" class="itemShop--img"/>
+      <img :src="product.url" class="itemShop--img"/>
     </div>
     <div class="itemShop__details NueMontreal">
       <div>
         {{ product.title }}<br/>
         <div class="itemShop__details--orange">
-          {{ product.price }}$CAD
+          {{ product.price }}$ CAD
         </div>
       </div>
       <div>
@@ -43,6 +43,7 @@ export default {
 }
 
 .itemShop__details{
+  line-height: .85rem;
   width: 80%;
   display: flex;
   justify-content: space-between;

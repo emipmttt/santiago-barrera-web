@@ -9,7 +9,7 @@
         BEST<br/>SELLER
       </p>
       <div class="bestSeller">
-        <div class="bestSeller--item" v-for="product in products" :key="product.id">
+        <div class="bestSeller--item" v-if="product.bestSeller" v-for="product in products" :key="product.id">
           <item-best-seller-shop :product="product"/>
         </div>
       </div>
@@ -20,7 +20,7 @@
 
       <div class="allProducts">
         <div v-for="product in products" :key="product.id">
-          <item-shop :product="product"/>
+          <item-shop :product="product"/><br/><br/>
         </div>
       </div>
     </div>
