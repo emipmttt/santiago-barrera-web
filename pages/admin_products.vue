@@ -23,7 +23,7 @@
         <tbody>
         <tr v-for="product in products" :key="product._id">
           <td>
-            <v-icon x-large>{{product.image}}</v-icon>
+            <img class="preview" :src="product.url" />
           </td>
           <td>
             {{ product.title }}
@@ -122,10 +122,20 @@ export default {
       this.updateActive = false;
       this.articleSelected = {};
     },
+
+    findFirstImage(content) {
+      const element = content
+
+      if (element) {
+        return element.content;
+      }
+    },
   },
 }
 </script>
 
 <style scoped>
-
+.preview {
+  width: 150px;
+}
 </style>
