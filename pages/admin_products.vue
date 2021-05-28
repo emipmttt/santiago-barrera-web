@@ -43,7 +43,7 @@
               </v-icon>
             </v-btn>
 
-            <v-btn @click="">
+            <v-btn @click="deleteProduct(product)">
               <v-icon color="#FF8D3B">
                 mdi-delete
               </v-icon>
@@ -104,6 +104,11 @@ export default {
       const request = await getProducts();
       console.log(request)
       this.products = request;
+    },
+
+    async deleteProduct(product) {
+      await axios.delete(`/api/products/${product._id}`);
+      await this.getProducts();
     },
 
     updateProduct(article) {
