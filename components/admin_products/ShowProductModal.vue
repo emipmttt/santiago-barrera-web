@@ -30,10 +30,8 @@
         {{ product.publication }}
 
         <br/><br/>
-        <h3>Image</h3>
-        <v-icon x-large>
-          {{ product.image }}
-        </v-icon>
+        <h3>Image</h3><br/>
+        <img class="preview" :src="product.url" />
 
       </v-card-text>
 
