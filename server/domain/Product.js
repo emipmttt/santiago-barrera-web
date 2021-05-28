@@ -8,7 +8,8 @@ module.exports = class {
     oldPrice,
     size,
     publication,
-    stock
+    stock,
+    bestSeller,
   ) {
     this.id = id;
     this.title = title;
@@ -19,5 +20,6 @@ module.exports = class {
     this.size = size;
     this.publication = publication;
     this.stock = stock;
+    this.bestSeller = bestSeller;
   }
 };

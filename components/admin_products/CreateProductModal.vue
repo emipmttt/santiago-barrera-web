@@ -107,6 +107,7 @@ export default {
           stock: this.stock,
           size: this.size,
           publication: Date.now(),
+          bestSeller: false,
         });
 
         location.reload();

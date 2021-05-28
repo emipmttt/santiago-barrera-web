@@ -30,37 +30,25 @@
 <script>
 import ItemShop from "../components/shopPage/itemShop";
 import ItemBestSellerShop from "../components/shopPage/itemBestSellerShop";
+import getProducts from "../middleware/getProducts";
 export default {
   name: "shop",
   components: {ItemBestSellerShop, ItemShop},
   data(){
     return{
-      products: {
-        0:{
-          id: '1',
-          image: 'mdi-death-star-variant',
-          title: 'Death Star Variant',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, commodi consequatur cumque deleniti doloremque fuga impedit iste itaque nesciunt pariatur perferendis, praesentium quasi qui quidem ratione, sapiente similique suscipit velit.',
-          price: '400',
-          oldPrice: '500',
-          stock: '40',
-          size: 'S - XL',
-          publication: '01-01-2000',
-        },
-        1:{
-          id: '2',
-          image: 'mdi-death-star',
-          title: 'Death Star',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, commodi consequatur cumque deleniti doloremque fuga impedit iste itaque nesciunt pariatur perferendis, praesentium quasi qui quidem ratione, sapiente similique suscipit velit.',
-          price: '400',
-          oldPrice: '500',
-          stock: '400',
-          size: 'S - XL',
-          publication: '02-02-2002',
-        },
-      },
+      products: {},
     }
   },
+  async mounted() {
+    await this.getProducts();
+  },
+
+  methods: {
+    async getProducts() {
+      const request = await getProducts();
+      this.products = request;
+    },
+  }
 }
 </script>
 

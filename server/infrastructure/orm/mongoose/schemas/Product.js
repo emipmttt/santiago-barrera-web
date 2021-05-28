@@ -8,6 +8,7 @@ const schema = new mongoose.Schema({
   oldPrice: Number,
   size: String,
   publication: Number,
+  bestSeller: Boolean,
   stock: Number,
 }, {
   timestamps: true

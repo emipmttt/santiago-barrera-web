@@ -74,6 +74,7 @@ export default {
           url: this.product.url,
           price: this.product.price,
           oldPrice: this.product.oldPrice,
+          bestSeller: this.product.bestSeller,
           stock: this.product.stock,
           size: this.product.size,
           publication: this.product.publication,

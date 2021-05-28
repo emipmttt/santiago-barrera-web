@@ -14,8 +14,8 @@
         <tr>
           <th class="text-left"></th>
           <th class="text-left">Title</th>
-          <th class="text-left">Publication</th>
           <th class="text-left">Stock</th>
+          <th class="text-left">Best Seller</th>
           <th class="text-left"></th>
         </tr>
         </thead>
@@ -29,11 +29,14 @@
             {{ product.title }}
           </td>
           <td>
-            {{ product.publication }}
+            {{ product.stock }}
           </td>
 
           <td>
-            {{ product.stock }}
+            <v-switch
+              v-model="product.bestSeller"
+              @change="activateBestSeller(product, $event)"
+            />
           </td>
 
           <td>
@@ -100,6 +103,12 @@ export default {
   },
 
   methods: {
+    async activateBestSeller(product, event) {
+      product.bestSeller = event;
+
+      await axios.put("/api/products/" + product._id, product);
+    },
+
     async getProducts() {
       const request = await getProducts();
       console.log(request)
