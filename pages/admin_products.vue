@@ -41,7 +41,7 @@
           </td>
 
           <td>
-            <v-btn @click="showProduct(product)">
+            <v-btn @click="showColoursProduct(product)">
               <v-icon color="#FF8D3B">
                 mdi-palette
               </v-icon>
@@ -72,6 +72,12 @@
       </template>
     </v-simple-table>
 
+    <show-colours-product-modal
+      :active="showColoursActive"
+      :product="productSelected"
+      @closeModal="closeModal"
+    />
+
     <ShowProductModal
       :active="showActive"
       :product="productSelected"
@@ -92,15 +98,17 @@ import ShowProductModal from "../components/admin_products/ShowProductModal";
 import UpdateProductModal from "../components/admin_products/UpdateProductModal";
 import getProducts from "../middleware/getProducts";
 import axios from "axios";
+import ShowColoursProductModal from "../components/admin_products/showColoursProductModal";
 
 export default {
   name: "admin_products",
-  components: {UpdateProductModal, ShowProductModal, CreateProductModal},
+  components: {ShowColoursProductModal, UpdateProductModal, ShowProductModal, CreateProductModal},
   layout: "admin",
 
   data(){
     return{
       showActive: false,
+      showColoursActive: false,
       updateActive: false,
       productSelected: {},
       products: [],
@@ -137,6 +145,11 @@ export default {
 
     showProduct(product) {
       this.showActive = true;
+      this.productSelected = product;
+    },
+
+    showColoursProduct(product) {
+      this.showColoursActive = true;
       this.productSelected = product;
     },
 
