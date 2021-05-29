@@ -128,7 +128,6 @@ export default {
 
     async getProducts() {
       const request = await getProducts();
-      console.log(request)
       this.products = request;
     },
 
@@ -140,7 +139,6 @@ export default {
     updateProduct(article) {
       this.updateActive = true;
       this.productSelected = article;
-      console.log(article)
     },
 
     showProduct(product) {

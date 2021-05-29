@@ -47,10 +47,10 @@ export default {
 
   methods:{
     async addColour() {
-      this.product.colours.push(this.colour)
-
-      this.loading = true;
       try {
+        this.loading = true;
+        this.product.colours.push(this.colour)
+
         await axios.put("/api/products/" + this.product._id, this.product);
 
         this.closeModal()

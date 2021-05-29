@@ -29,7 +29,7 @@
               </td>
 
               <td>
-                <v-btn @click="">
+                <v-btn @click="deleteColour(colour)">
                   <v-icon color="#FF8D3B">
                     mdi-delete
                   </v-icon>
@@ -58,6 +58,8 @@
 <script>
 
 import AddColourModal from "./addColourModal";
+import axios from "axios";
+
 export default {
   name: "showColoursProductModal",
   components: {AddColourModal},
@@ -67,6 +69,20 @@ export default {
     closeModal() {
       this.active = false;
       this.$emit("closeModal");
+    },
+
+    async deleteColour(colour){
+      try {
+        let i = this.product.colours.indexOf(colour);
+        this.product.colours.splice( i, 1 );
+
+        await axios.put("/api/products/" + this.product._id, this.product);
+
+      } catch (e) {
+        console.log(e);
+      } finally {
+        this.loading = false;
+      }
     }
   }
 }
