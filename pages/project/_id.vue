@@ -47,12 +47,10 @@ export default {
     };
   },
   async mounted() {
-    var request = (
+    let request = (
       await axios.get("/api/projects/details/" + this.$route.params.id)
     ).data;
     this.project = request.data;
-
-    console.log(this.project);
   },
 };
 </script>

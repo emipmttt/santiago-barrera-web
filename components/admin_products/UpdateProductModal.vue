@@ -35,12 +35,6 @@
           label="Size"
           v-model="product.size"
         />
-
-        <v-text-field
-          label="Publication"
-          v-model="product.publication"
-          type="date"
-        />
       </v-card-text>
 
       <v-divider/>
@@ -51,7 +45,7 @@
           Cancel
         </v-btn>
 
-        <v-btn text color="#FF8D3B" @click="">
+        <v-btn text color="#FF8D3B" @click="updateProduct">
           Save
         </v-btn>
       </v-card-actions>
@@ -71,6 +65,29 @@ export default {
       this.$emit("closeModal");
     },
 
+    async updateProduct() {
+      this.loading = true;
+      try {
+        await axios.put("/api/products/" + this.product._id, {
+          title: this.product.title,
+          description: this.product.description,
+          url: this.product.url,
+          price: this.product.price,
+          oldPrice: this.product.oldPrice,
+          bestSeller: this.product.bestSeller,
+          stock: this.product.stock,
+          size: this.product.size,
+          publication: this.product.publication,
+          colours: this.product.colours,
+        });
+
+        this.closeEditModal()
+      } catch (e) {
+        console.log(e);
+      } finally {
+        this.loading = false;
+      }
+    },
   }
 
 }

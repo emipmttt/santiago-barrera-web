@@ -60,11 +60,13 @@ export default {
       const conf = await getSettings();
       if (conf[0]) this.allSettings = conf[0];
     },
+
     async changeAvailableToWork(event) {
       this.allSettings.availableToWork = event;
 
       await axios.put("api/settings/0", this.allSettings);
     },
+
     async deleteWord(item) {
       const index = this.allSettings.words.indexOf(item);
 

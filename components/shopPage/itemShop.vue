@@ -1,22 +1,27 @@
 <template>
   <div>
-    <div class="itemShop">
-      <img src="../../static/image.jpg" class="itemShop--img"/>
-    </div>
-    <div class="itemShop__details NueMontreal">
-      <div>
-        {{ product.title }}<br/>
-        <div class="itemShop__details--orange">
-          {{ product.price }}$CAD
+    <nuxt-link
+      :to="`/product/${this.product._id}`"
+      class="itemShop--link"
+    >
+      <div class="itemShop">
+        <img :src="product.url" class="itemShop--img"/>
+      </div>
+      <div class="itemShop__details NueMontreal">
+        <div>
+          {{ product.title }}<br/>
+          <div class="itemShop__details--orange">
+            {{ product.price }}$CAD
+          </div>
+        </div>
+        <div>
+          {{ product.stock }} in Stock<br/>
+          <div class="itemShop__details--orange">
+            {{ product.size }}
+          </div>
         </div>
       </div>
-      <div>
-        {{ product.stock }} in Stock<br/>
-        <div class="itemShop__details--orange">
-          {{ product.size }}
-        </div>
-      </div>
-    </div>
+    </nuxt-link>
   </div>
 </template>
 
@@ -28,6 +33,11 @@ export default {
 </script>
 
 <style scoped>
+
+.itemShop--link{
+  text-decoration-line: none;
+  color: #333333;
+}
 
 .itemShop{
   padding: 0;
@@ -45,6 +55,7 @@ export default {
 .itemShop__details{
   width: 97%;
   display: flex;
+  line-height: 1.2rem;
   justify-content: space-between;
   font-size: .9rem;
   margin-top: 1rem;
