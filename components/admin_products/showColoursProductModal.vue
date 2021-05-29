@@ -77,7 +77,6 @@ export default {
         this.product.colours.splice( i, 1 );
 
         await axios.put("/api/products/" + this.product._id, this.product);
-
       } catch (e) {
         console.log(e);
       } finally {
