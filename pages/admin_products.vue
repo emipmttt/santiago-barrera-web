@@ -16,6 +16,7 @@
           <th class="text-left">Title</th>
           <th class="text-left">Stock</th>
           <th class="text-left">Best Seller</th>
+          <th class="text-left">Colors</th>
           <th class="text-left"></th>
         </tr>
         </thead>
@@ -37,6 +38,14 @@
               v-model="product.bestSeller"
               @change="activateBestSeller(product, $event)"
             />
+          </td>
+
+          <td>
+            <v-btn @click="showProduct(product)">
+              <v-icon color="#FF8D3B">
+                mdi-palette
+              </v-icon>
+            </v-btn>
           </td>
 
           <td>

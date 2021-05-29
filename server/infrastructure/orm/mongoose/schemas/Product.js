@@ -10,6 +10,9 @@ const schema = new mongoose.Schema({
   publication: Number,
   bestSeller: Boolean,
   stock: Number,
+  colours: [{
+    type: String
+  }],
 }, {
   timestamps: true
 });

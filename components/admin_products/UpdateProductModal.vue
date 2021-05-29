@@ -78,6 +78,7 @@ export default {
           stock: this.product.stock,
           size: this.product.size,
           publication: this.product.publication,
+          colours: this.product.colours,
         });
 
         this.closeEditModal()

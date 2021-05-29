@@ -4,7 +4,7 @@ const Product = require("../../domain/Product");
 module.exports = {
   async createProduct(req, res) {
     try {
-      const model = new Product(null, req.body.title, req.body.description, req.body.url, req.body.price, req.body.oldPrice, req.body.size, req.body.publication, req.body.stock, req.body.bestSeller);
+      const model = new Product(null, req.body.title, req.body.description, req.body.url, req.body.price, req.body.oldPrice, req.body.size, req.body.publication, req.body.stock, req.body.bestSeller, req.body.colours);
       const product = await ProductsRepository.store(model);
 
       return res.json({
@@ -21,7 +21,7 @@ module.exports = {
     try {
 
       const id = req.params.id;
-      const model = new Product(id, req.body.title, req.body.description, req.body.url, req.body.price, req.body.oldPrice, req.body.size, req.body.publication, req.body.stock, req.body.bestSeller);
+      const model = new Product(id, req.body.title, req.body.description, req.body.url, req.body.price, req.body.oldPrice, req.body.size, req.body.publication, req.body.stock, req.body.bestSeller, req.body.colours);
       const result = await ProductsRepository.update(id, model);
 
       return res.json({

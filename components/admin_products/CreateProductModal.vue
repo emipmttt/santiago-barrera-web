@@ -108,6 +108,7 @@ export default {
           size: this.size,
           publication: Date.now(),
           bestSeller: false,
+          colours: [],
         });
 
         location.reload();

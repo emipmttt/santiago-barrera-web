@@ -10,6 +10,7 @@ module.exports = class {
     publication,
     stock,
     bestSeller,
+    colours,
   ) {
     this.id = id;
     this.title = title;
@@ -21,5 +22,6 @@ module.exports = class {
     this.publication = publication;
     this.stock = stock;
     this.bestSeller = bestSeller;
+    this.colours = colours;
   }
 };

@@ -7,16 +7,16 @@
     <div class="shop__body">
       <p class="shop-title NueMontreal">
         BEST<br/>SELLER
-      </p>
+      </p><br/>
       <div class="bestSeller">
         <div class="bestSeller--item" v-if="product.bestSeller" v-for="product in products" :key="product.id">
-          <item-best-seller-shop :product="product"/>
+          <item-best-seller-shop :product="product"/><br/><br/>
         </div>
       </div>
 
       <p class="shop-title NueMontreal">
         ALL<br/>PRODUCTS
-      </p>
+      </p><br/>
 
       <div class="allProducts">
         <div v-for="product in products" :key="product.id">
